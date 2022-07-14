@@ -8,6 +8,7 @@ public class Room : IEnumerable{
 	public List<Room> nextRooms;
 	public GCHandle previousRoom;
 	public DunRoom room;
+	public uint doors=0;
 	public uint direction;//0 start,1 top,2 bottom,3 right,4 left
 	public int branch;
 	public Room(){
@@ -119,28 +120,28 @@ public static class Generate{
 		num-=room.branch;
 		if(room.direction!=0){
 			if(room.direction==1){
-				previous.room.doors|=4;
+				previous.doors|=4;
 			}
 			else if(room.direction==2){
-				previous.room.doors|=8;
+				previous.doors|=8;
 			}
 			else if(room.direction==3){
-				previous.room.doors|=2;
+				previous.doors|=2;
 			}
 			else if(room.direction==4){
-				previous.room.doors|=1;
+				previous.doors|=1;
 			}
 			if(room.direction==1){
-				room.room.doors|=8;
+				room.doors|=8;
 			}
 			else if(room.direction==2){
-				room.room.doors|=4;
+				room.doors|=4;
 			}
 			else if(room.direction==3){
-				room.room.doors|=1;
+				room.doors|=1;
 			}
 			else if(room.direction==4){
-				room.room.doors|=2;
+				room.doors|=2;
 			}
 			previous.nextRooms.Add(room);
 		}
@@ -166,11 +167,11 @@ public class MapGen : MonoBehaviour
 	public UnityEngine.Tilemaps.Tilemap map;
 	public UnityEngine.Tilemaps.Tilemap objMap;
 	public GridLayout grid;
-	public UnityEngine.Tilemaps.TileBase door;
+	public GameObject door;
 	public UnityEngine.Tilemaps.TileBase road;
 	public Stack<(roomGen,Vector3Int)> roomStack=new Stack<(roomGen,Vector3Int)>();
  	public UnityEngine.Tilemaps.TileBase wall;
-	public GridBrushBase brush;
+	public GameObject enemy;
 	private Vector3Int playerPos;
 	private Vector3Int endPos;
 	private List<Vector3Int> teleportCandidate = new List<Vector3Int>();
@@ -189,9 +190,11 @@ public class MapGen : MonoBehaviour
 			else
 				count++;
 		}
+		map.SwapTile(road,null);
 	}
 	void showRoomHelper(Room room){
 		roomGen roomdata= room.room.Room;
+		roomdata.doors=room.doors;
 		UnityEngine.Tilemaps.Tilemap roomS=roomdata.map;
 		Vector3Int doorPos=new Vector3Int();
 		if(room.direction==0){
@@ -204,25 +207,30 @@ public class MapGen : MonoBehaviour
 				map.SetTile(room.leftBotConer+new Vector3Int(i,j),roomS.GetTile(new Vector3Int(i,j)));
 			}
 		}
-		if((room.room.doors&1)==1){
+		Instantiate(roomdata.gameObject,room.leftBotConer,Quaternion.identity);
+		if((room.doors&1)==1){
 			doorPos=room.leftBotConer+roomdata.leftDoor;
-			map.SetTile(doorPos,door);
+			map.SetTile(doorPos,road);
 		}
-		if((room.room.doors&2)>>1==1){
+		if((room.doors&2)>>1==1){
 			doorPos=room.leftBotConer+roomdata.rightDoor;
-			map.SetTile(doorPos,door);
+			map.SetTile(doorPos,road);
+
 		}
-		if((room.room.doors&4)>>2==1){
+		if((room.doors&4)>>2==1){
 			doorPos=room.leftBotConer+roomdata.topDoor;
-			map.SetTile(doorPos,door);
+			map.SetTile(doorPos,road);
+
 		}
-		if((room.room.doors&8)>>3==1){
+		if((room.doors&8)>>3==1){
 			doorPos=room.leftBotConer+roomdata.bottomDoor;
-			map.SetTile(doorPos,door);
+			map.SetTile(doorPos,road);
+
 		}
 		foreach (var item in roomdata.enemyPos)
 		{
-			brush.Paint(grid,objMap.gameObject,item+room.leftBotConer);
+			Instantiate(enemy,item+room.leftBotConer,Quaternion.identity,objMap.gameObject.transform);
+			
 		}
 		if(roomStack.Count>0){
 			var previous=roomStack.Peek();

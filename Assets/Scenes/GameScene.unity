@@ -240,9 +240,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1717884458030049120, guid: ede64d3fcb4d89c43b210e323e4f6a75, type: 3}
+      propertyPath: door
+      value: 
+      objectReference: {fileID: 6602985611384805648, guid: 07f39fcb8588f4746b5b9f82a28c0c46, type: 3}
+    - target: {fileID: 1717884458030049120, guid: ede64d3fcb4d89c43b210e323e4f6a75, type: 3}
       propertyPath: brush
       value: 
       objectReference: {fileID: 11400000, guid: b32bc7ea629cd1d4a833aa3848f28d30, type: 2}
+    - target: {fileID: 1717884458030049120, guid: ede64d3fcb4d89c43b210e323e4f6a75, type: 3}
+      propertyPath: enemy
+      value: 
+      objectReference: {fileID: 1699405025409994209, guid: 635f91da53a903544bd585ef3dc2ec9c, type: 3}
     - target: {fileID: 1717884458030049120, guid: ede64d3fcb4d89c43b210e323e4f6a75, type: 3}
       propertyPath: telepoint
       value: 
@@ -848,7 +856,6 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
@@ -1473,6 +1480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d27e6eeaebf344e9d15861238f8046, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trigger: {fileID: 0}
 --- !u!4 &990137726
 Transform:
   m_ObjectHideFlags: 0
@@ -1689,7 +1697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1773,7 +1780,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.9842105, y: 1}
+    m_SensorSize: {x: 2.2528148, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2983,6 +2990,10 @@ PrefabInstance:
     - target: {fileID: 1699405025409994209, guid: 635f91da53a903544bd585ef3dc2ec9c, type: 3}
       propertyPath: m_Name
       value: EnemyDummy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1699405025409994209, guid: 635f91da53a903544bd585ef3dc2ec9c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1699405025409994214, guid: 635f91da53a903544bd585ef3dc2ec9c, type: 3}
       propertyPath: m_RootOrder
