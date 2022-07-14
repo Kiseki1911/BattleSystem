@@ -12,11 +12,11 @@ public class Door : Interactive
             trigger.enabled=false;
         }
     }
-    void openDoor(){
+    public void openDoor(){
         //TODO: animation
         boxcollider.enabled=false;
     }
-    void lockDoor(){
+    public void lockDoor(){
         //TODO: animation
         boxcollider.enabled=true;
     }

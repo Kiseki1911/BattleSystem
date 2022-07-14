@@ -207,7 +207,7 @@ public class MapGen : MonoBehaviour
 				map.SetTile(room.leftBotConer+new Vector3Int(i,j),roomS.GetTile(new Vector3Int(i,j)));
 			}
 		}
-		Instantiate(roomdata.gameObject,room.leftBotConer,Quaternion.identity);
+		Instantiate(roomdata.gameObject,room.leftBotConer,Quaternion.identity,objMap.transform);
 		if((room.doors&1)==1){
 			doorPos=room.leftBotConer+roomdata.leftDoor;
 			map.SetTile(doorPos,road);
@@ -226,11 +226,6 @@ public class MapGen : MonoBehaviour
 			doorPos=room.leftBotConer+roomdata.bottomDoor;
 			map.SetTile(doorPos,road);
 
-		}
-		foreach (var item in roomdata.enemyPos)
-		{
-			Instantiate(enemy,item+room.leftBotConer,Quaternion.identity,objMap.gameObject.transform);
-			
 		}
 		if(roomStack.Count>0){
 			var previous=roomStack.Peek();

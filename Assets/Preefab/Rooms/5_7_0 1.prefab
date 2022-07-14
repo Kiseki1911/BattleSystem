@@ -49,11 +49,12 @@ MonoBehaviour:
   rightDoor: {x: 6, y: 2, z: 0}
   topDoor: {x: 3, y: 4, z: 0}
   bottomDoor: {x: 3, y: 0, z: 0}
-  left: {fileID: 7547550167484353078, guid: dd8327f81ecaf584d998881071897d6c, type: 3}
-  right: {fileID: 1801140316498601282, guid: 5f6e3fb4c5eea9a44829de9ffd77cf8a, type: 3}
-  top: {fileID: 1340712866875349407, guid: cf1af6ee8c2456944905a96836608010, type: 3}
-  bottom: {fileID: 442942399839852454, guid: a93086e44e580ca4cb7c4f5122afdc94, type: 3}
+  left: {fileID: 2628112142682073514, guid: dd8327f81ecaf584d998881071897d6c, type: 3}
+  right: {fileID: 5702591825414285098, guid: 5f6e3fb4c5eea9a44829de9ffd77cf8a, type: 3}
+  top: {fileID: 1340712866875349406, guid: cf1af6ee8c2456944905a96836608010, type: 3}
+  bottom: {fileID: 442942399839852457, guid: a93086e44e580ca4cb7c4f5122afdc94, type: 3}
+  enemy: {fileID: 1699405025409994209, guid: 635f91da53a903544bd585ef3dc2ec9c, type: 3}
   enemyPos:
   - {x: 2, y: 3, z: 0}
-  teleportPos: {x: 2, y: 2, z: 0}
+  teleportPos: {x: 2, y: 3, z: 0}
   doors: 0
