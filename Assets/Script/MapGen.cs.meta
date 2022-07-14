@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 1befb2636bff122409003f4ed3262bcc
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rooms: {fileID: 11400000, guid: 6e6e2ef326855254ea08bbbf7e494c9a, type: 2}
+  - map: {instanceID: 0}
+  - objMap: {instanceID: 0}
+  - grid: {instanceID: 0}
+  - door: {instanceID: 0}
+  - road: {instanceID: 0}
+  - wall: {instanceID: 0}
+  - brush: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

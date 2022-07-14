@@ -137,14 +137,14 @@ TextureImporter:
         guid: c39cb5b0547fe284e8307e27c54c005a
         position: {x: 129.67729, y: 254.48558, z: 0}
         rotation: {x: 0, y: 0, z: -0.70869046, w: 0.70551956}
-        length: 132.01198
+        length: 132.01195
         parentId: -1
         color:
           serializedVersion: 2
           rgba: 4278190335
       - name: bone_2
         guid: d252e1c9455610b4da09f427e5cd3dc5
-        position: {x: 132.01195, y: 0.00000011726419, z: 0}
+        position: {x: 132.01193, y: 0.00000004883927, z: 0}
         rotation: {x: 0, y: 0, z: 0.007167959, w: 0.9999743}
         length: 120.17699
         parentId: 0

@@ -184,7 +184,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb5616fac4d7804eb690b8219ec4719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  refe: {fileID: 0}
+  weapon:
+    count: 0
+    price: 0
+    mass: 0
+    hardness: 0
+    massCenter: {x: 0, y: 0}
+    handle: {x: 0, y: 0}
+    diraction: {x: 0, y: 0}
+    type: 0
 --- !u!61 &655212777962062605
 BoxCollider2D:
   m_ObjectHideFlags: 0

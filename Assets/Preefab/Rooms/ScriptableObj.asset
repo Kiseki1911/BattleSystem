@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f15c8dda13e88641ada52814b48b2ec, type: 3}
+  m_Name: ScriptableObj
+  m_EditorClassIdentifier: 
+  roomList:
+  - room:
+    - map: {fileID: 6246507542492764313, guid: f7b390caa394fa4499ba2b8cb23d11d6, type: 3}
+      leftDoor: {x: 0, y: 5, z: 0}
+      rightDoor: {x: 9, y: 4, z: 0}
+      topDoor: {x: 5, y: 9, z: 0}
+      bottomDoor: {x: 4, y: 0, z: 0}
+      enemyPos:
+      - {x: 5, y: 5, z: 0}
+      teleportPos: {x: 2, y: 2, z: 0}
+    - map: {fileID: 4245633098362499686, guid: 9d3bc1bec6e302c4a8bb4df9543e56d2, type: 3}
+      leftDoor: {x: 0, y: 6, z: 0}
+      rightDoor: {x: 9, y: 3, z: 0}
+      topDoor: {x: 6, y: 9, z: 0}
+      bottomDoor: {x: 3, y: 0, z: 0}
+      enemyPos:
+      - {x: 5, y: 5, z: 0}
+      teleportPos: {x: 3, y: 3, z: 0}
+    height: 10
+    width: 10
+    doors: 0
+  - room:
+    - map: {fileID: 8945047670455366211, guid: 21ba1d2f3860553489a2ca11b853fccc, type: 3}
+      leftDoor: {x: 0, y: 2, z: 0}
+      rightDoor: {x: 6, y: 2, z: 0}
+      topDoor: {x: 3, y: 4, z: 0}
+      bottomDoor: {x: 3, y: 0, z: 0}
+      enemyPos:
+      - {x: 2, y: 3, z: 0}
+      teleportPos: {x: 1, y: 2, z: 0}
+    height: 5
+    width: 7
+    doors: 0
+  - room:
+    - map: {fileID: 7734664697823286875, guid: 5f769cb8f506d984699ed27f978a1581, type: 3}
+      leftDoor: {x: 0, y: 8, z: 0}
+      rightDoor: {x: 14, y: 6, z: 0}
+      topDoor: {x: 8, y: 19, z: 0}
+      bottomDoor: {x: 7, y: 0, z: 0}
+      enemyPos:
+      - {x: 7, y: 10, z: 0}
+      teleportPos: {x: 6, y: 7, z: 0}
+    height: 20
+    width: 15
+    doors: 0

@@ -23,3 +23,8 @@ MonoBehaviour:
     AbIcon: {fileID: 0}
     AbDescription: 
     AbUseRadius: 0
+  - AbID: 2
+    AbName: "\u56DE\u65CB"
+    AbIcon: {fileID: 0}
+    AbDescription: 
+    AbUseRadius: 0
