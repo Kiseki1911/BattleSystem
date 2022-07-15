@@ -94,6 +94,7 @@ public class EnemyManager : MonoBehaviour
         if(transform.GetComponentInChildren<Projectile>()!=null){
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);
         }
+        transform.parent.GetComponent<roomGen>().onEnemyDeath();
         gameObject.SetActive(false);
     }
 

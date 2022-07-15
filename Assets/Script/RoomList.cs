@@ -8,8 +8,6 @@ public class DunRoom
     [SerializeField] private List<roomGen> room;
     [SerializeField] public int height;
     [SerializeField] public int width;
-    [Range(0,15)]
-    [SerializeField] public uint doors=0;
     public roomGen Room{get{
         var res=room[Random.Range(0,room.Count)];
         return res;
@@ -18,7 +16,6 @@ public class DunRoom
         room=f.room;
         height=f.height;
         width=f.width;
-        doors=f.doors;
     }
 }
 

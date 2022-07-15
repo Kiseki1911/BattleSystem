@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Interactive : MonoBehaviour
 {
     private bool isNear=false;
+    [SerializeField] protected BoxCollider2D trigger;
     //GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -16,7 +17,7 @@ public class Interactive : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = isNear;
+        //gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = isNear;
     }
     private void OnMouseDown() {
         if(isNear){

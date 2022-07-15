@@ -34,6 +34,7 @@ public class CharacterActions : MonoBehaviour
     public void Movement(Vector3 directionUnit){
         rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1f);
         for(int i=0; i <rayResults.Length;i++){
+            Debug.Log(rayResults[i].collider.name);
             if(rayResults[i].collider.tag=="Wall"){
                 //Debug.Log("wall ahead");
                 return;
@@ -44,6 +45,7 @@ public class CharacterActions : MonoBehaviour
                 targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
                 fatigue.IncreaseFat(30);
             }
+        
     }
     public void RoundAttack(){
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
