@@ -17,6 +17,10 @@ public class EnemyManager : MonoBehaviour
     
     public bool isRoundAttack;
 
+    public Collider2D[] unitSees = new Collider2D[5];
+    public bool isSeeingPlayer=false;
+    public int seeRange=5;
+    
     RaycastHit2D[] rayResults;
     // Start is called before the first frame update
     void Start()
@@ -42,10 +46,12 @@ public class EnemyManager : MonoBehaviour
             }
         }
         Debug.DrawRay(transform.position, directionUnit, Color.green);
-            if((targetPos-transform.position).magnitude<0.05){
-                targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
-                //fatigue.IncreaseFat(30);
-            }
+        if((targetPos-transform.position).magnitude<0.05){
+            targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
+            //fatigue.IncreaseFat(30);
+            isSeeingPlayer=SeePlayer(seeRange);
+            
+        }
     }
     public void RoundAttack(){
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -102,5 +108,20 @@ public class EnemyManager : MonoBehaviour
             other.gameObject.GetComponentInParent<CharacterActions>().TakeDamage(attackDamange);
             Debug.Log(other.gameObject.GetComponentInParent<CharacterActions>().curHealth);
         }
+    }
+
+    private bool SeePlayer(int viewRange){
+        int units = Physics2D.OverlapCircleNonAlloc(transform.position, viewRange,unitSees);
+        Debug.Log(units);
+        if(units>0){
+            for(int i =0;i<units;i++){
+                //Debug.Log(unitSees[i]);
+                if(unitSees[i].CompareTag("Player")){
+                    Debug.Log("sees player");
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }

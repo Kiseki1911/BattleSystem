@@ -29,25 +29,27 @@ public class AbilityManager : MonoBehaviour
     }
     public void CallAbility(int ID){
         Abilities inUse = GetAbDetails(ID);
-        switch(ID){
-            case 1:
-                if(!offHand)
-                {
+        if(!offHand)
+        {
+            switch(ID){
+                case 1:
+                
                     Debug.Log("use ability "+ inUse.AbName);
                     GameObject proj = Instantiate(weaponPrefab,WeaponManager.Instance.weaponInHand.transform.position,WeaponManager.Instance.weaponInHand.transform.rotation);
                     offHand = true;
                     WeaponManager.Instance.weaponInHand.SetActive(!offHand);
                     proj.GetComponent<Projectile>().Enter(proj.transform.right);
-                }
-                break;
-            case 2:
-                if(!offHand){
+                
+                    break;
+                case 2:
+                
                     Debug.Log("use ability "+ inUse.AbName);
-                }
-                break;
-
+                    
+                    break;
+            }
         }
-
     }
-
+    private void SwingAttack(){
+        //WeaponManager.Instance.cursor.transform.RotateAround(player)
+    }
 }
