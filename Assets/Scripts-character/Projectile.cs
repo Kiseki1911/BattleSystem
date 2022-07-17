@@ -12,6 +12,8 @@ public class Projectile : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1,0);
+        StartCoroutine(SelfReturn(10));
+
     }
 
     // Update is called once per frame
@@ -51,11 +53,17 @@ public class Projectile : MonoBehaviour
             onHit= true;
         }
         else if(other.tag=="Player"){
-            AbilityManager.Instance.offHand=false;
-            WeaponManager.Instance.weaponInHand.SetActive(true);
-            onReturn=false;
-            Destroy(gameObject);
+            if(onReturn ||gameObject.transform.parent!=null){
+                Debug.Log("back to hand");
+                AbilityManager.Instance.offHand=false;
+                WeaponManager.Instance.weaponInHand.SetActive(true);
+                onReturn=false;
+                Destroy(gameObject);                
+            }
         }
     }
-
+    IEnumerator SelfReturn(float time){
+        yield return new WaitForSeconds(time);
+        onReturn = true;
+    }
 }

@@ -39,23 +39,15 @@ public class EnemyInput : MonoBehaviour
     private void AICase(int type){
         switch(type){
             case 0:
-                if(isHori){
-                    EnemyMoveInput(vInputX,0);
-                    if(wanderTimer){
-                        wanderTimer = false;
-                        StartCoroutine(constantWander(Random.Range(3f,7f),0));
-                    }
-                }
-                else{
-                    EnemyMoveInput(0,vInputY);
-                    if(wanderTimer){
-                        wanderTimer = false;
-                        StartCoroutine(constantWander(Random.Range(3f,7f),1));
-                    }
-                }
+                Wander();
             break;
             case 1:
-                
+                if(me.isSeeingPlayer){
+                    Chase();
+                }
+                else{
+                    Wander();
+                }
             break;
             default:
             break;
@@ -73,5 +65,23 @@ public class EnemyInput : MonoBehaviour
         }
         isHori = Random.value>0.5f;
         wanderTimer = true;
+    }
+    private void Wander(){
+        if(isHori){
+            EnemyMoveInput(vInputX,0);
+            if(wanderTimer){
+                wanderTimer = false;
+                StartCoroutine(constantWander(Random.Range(3f,7f),0));
+            }
+        }
+        else{
+            EnemyMoveInput(0,vInputY);
+            if(wanderTimer){
+                wanderTimer = false;
+                StartCoroutine(constantWander(Random.Range(3f,7f),1));
+            }
+        }
+    }
+    private void Chase(){
     }
 }
