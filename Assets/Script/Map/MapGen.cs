@@ -170,7 +170,6 @@ public class MapGen : MonoBehaviour
 	public UnityEngine.Tilemaps.TileBase road;
 	public Stack<(roomGen,Vector3Int)> roomStack=new Stack<(roomGen,Vector3Int)>();
  	public UnityEngine.Tilemaps.TileBase wall;
-	public GameObject enemy;
 	private Vector3Int playerPos;
 	private Vector3Int endPos;
 	private List<Vector3Int> teleportCandidate = new List<Vector3Int>();
