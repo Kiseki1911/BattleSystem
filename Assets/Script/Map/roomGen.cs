@@ -58,7 +58,7 @@ public class roomGen: MonoBehaviour
             {
                 item.GetComponentInChildren<Door>().lockDoor();
             }
+            GetComponent<Collider2D>().enabled=false;
         }
-        GetComponent<Collider2D>().enabled=false;
     }
 }
