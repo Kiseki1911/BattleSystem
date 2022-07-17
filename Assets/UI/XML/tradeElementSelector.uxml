@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/elementSelector.uss?fileID=7433441132597879392&amp;guid=35bb24df372b0ce4bb8ee9c56a0b4b91&amp;type=3#elementSelector" />
+    <ui:VisualElement name="elementSelector" class="elementSelector" style="height: 140px; align-items: flex-end;">
+        <ui:VisualElement name="earser" class="element" style="height: 90px; width: 90px;">
+            <ui:VisualElement class="icon" />
+            <ui:Label text="橡皮擦" display-tooltip-when-elided="false" class="label" />
+        </ui:VisualElement>
+        <ui:VisualElement name="elementCover" style="flex-grow: 1; height: 109px; flex-direction: row; border-top-right-radius: 15px; border-bottom-right-radius: 15px; overflow: hidden; align-items: flex-end;">
+            <ui:VisualElement name="elementCoverTransform" style="flex-direction: row; position: absolute; transition-duration: 0.25s;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="hasMore" style="position: absolute; right: -28px; border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; border-left-color: rgb(185, 183, 167); border-right-color: rgba(67, 64, 45, 0); border-top-color: rgba(67, 64, 45, 0); border-bottom-color: rgba(67, 64, 45, 0); opacity: 0; transition-duration: 0.5s; bottom: 43px;" />
+        <ui:VisualElement name="hasPrev" style="position: absolute; border-left-width: 10px; border-right-width: 10px; border-top-width: 10px; border-bottom-width: 10px; border-left-color: rgba(67, 64, 45, 0); border-right-color: rgb(185, 183, 167); border-top-color: rgba(67, 64, 45, 0); border-bottom-color: rgba(67, 64, 45, 0); left: -28px; opacity: 0; transition-duration: 0.5s; bottom: 43px;" />
+    </ui:VisualElement>
+</ui:UXML>

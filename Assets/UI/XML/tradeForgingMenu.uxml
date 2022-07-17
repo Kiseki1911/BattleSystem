@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/button.uss?fileID=7433441132597879392&amp;guid=59c14cde4aa009949b9be9e4eed7d806&amp;type=3#button" />
+    <ui:Button text="放置握把" display-tooltip-when-elided="true" name="nigiru" />
+    <ui:Button text="锻造刀刃" display-tooltip-when-elided="true" name="yaiba" />
+    <ui:Button text="抹去" display-tooltip-when-elided="true" name="earser" />
+</ui:UXML>

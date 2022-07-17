@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5d8e1afe3eba5244998ae1b67bc8d16, type: 3}
+  m_Name: M_6_FireStone
+  m_EditorClassIdentifier: 
+  title: "\u706B\u7130\u77F3"
+  price: 80
+  id: 6
+  mass: 30
+  hardness: 10
+  sharped: 0
+  color: {r: 0.4528302, g: 0.13841224, b: 0.13841224, a: 1}

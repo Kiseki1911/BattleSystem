@@ -1,0 +1,42 @@
+#container Button {
+    height: 40px;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0.5px;
+    border-bottom-width: 0.5px;
+    border-left-color: rgba(255, 255, 255, 0.38);
+    border-right-color: rgba(255, 255, 255, 0.38);
+    border-top-color: rgba(255, 255, 255, 0.38);
+    border-bottom-color: rgba(255, 255, 255, 0.38);
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    -unity-font-style: bold;
+    font-size: 21px;
+    color: rgba(46, 46, 46, 255);
+    background-color: rgba(255, 255, 255, 0.87);
+    padding-right: 24px;
+    min-width: 219px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    -unity-text-align: middle-left;
+    transition-duration: 0.25s;
+}
+
+#container Button:hover {
+    background-color: rgba(255, 255, 255, 255);
+    font-size: 24px;
+    color: rgba(0, 0, 0, 255);
+}
+
+#container Button:active {
+    background-color: rgb(173, 173, 173);
+    color: rgba(236, 236, 236, 255);
+    font-size: 21px;
+}

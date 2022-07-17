@@ -1,0 +1,86 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/bagStyle.uss?fileID=7433441132597879392&amp;guid=57353560d0b67e9419ca6f14043e09d7&amp;type=3#bagStyle" />
+    <ui:VisualElement name="root" class="container">
+        <ui:VisualElement name="cover" style="height: 80%; width: 90%;">
+            <ui:VisualElement name="tab">
+                <ui:Button text="武器" display-tooltip-when-elided="true" name="ButtonWeapon" class="active" />
+                <ui:Button text="素材" display-tooltip-when-elided="true" name="ButtonElement" />
+            </ui:VisualElement>
+            <ui:Button text="快捷锻造" display-tooltip-when-elided="true" name="fastForge" style="position: absolute; right: 16px; top: 21px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/UI/Sprite/button.png?fileID=1101433423&amp;guid=e9d512eeabd5d5e438716a548651e272&amp;type=3#button_0&apos;); color: rgb(255, 255, 255); padding-left: 20px; padding-right: 20px;" />
+            <ui:VisualElement name="body" class="body">
+                <ui:VisualElement name="previewCover" class="preview-cover">
+                    <ui:VisualElement name="iconPreviewerCover" style="width: 90%; height: 233px; padding-left: 12px; padding-right: 12px; padding-top: 12px; padding-bottom: 12px; border-top-left-radius: 4px; border-bottom-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; background-image: url(&apos;project://database/Assets/UI/Sprite/border1.png?fileID=21300000&amp;guid=7d1268968173ddc409f00b30dfe404d3&amp;type=3#border1&apos;); margin-top: 15px; justify-content: center; align-items: center;">
+                        <ui:VisualElement name="iconPreviewer" style="width: 80%; height: 80%;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="weaponInfo" class="weapon-info" style="display: flex;">
+                        <ui:VisualElement>
+                            <ui:Label text="武器名称" display-tooltip-when-elidzed="true" name="weaponName" class="weapon-name" />
+                        </ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label text="伤害" display-tooltip-when-elided="true" />
+                            <ui:Label text="0" display-tooltip-when-elided="true" name="weaponPower" />
+                        </ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label text="重量" display-tooltip-when-elided="true" />
+                            <ui:Label text="0" display-tooltip-when-elided="true" name="weaponWeight" />
+                        </ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label text="耐久" display-tooltip-when-elided="true" />
+                            <ui:Label text="0" display-tooltip-when-elided="true" name="weaponDurability" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    <ui:VisualElement name="elementInfo" class="weapon-info" style="display: none;">
+                        <ui:VisualElement>
+                            <ui:Label text="元素名称" display-tooltip-when-elidzed="true" name="elementName" class="weapon-name" />
+                        </ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label text="剩余" display-tooltip-when-elided="true" />
+                            <ui:Label text="0" display-tooltip-when-elided="true" name="elementRemain" />
+                        </ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label text="质量" display-tooltip-when-elided="true" />
+                            <ui:Label text="0" display-tooltip-when-elided="true" name="elementWeight" />
+                        </ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label text="硬度" display-tooltip-when-elided="true" />
+                            <ui:Label text="0" display-tooltip-when-elided="true" name="elementHardness" />
+                        </ui:VisualElement>
+                        <ui:VisualElement>
+                            <ui:Label text="价格" display-tooltip-when-elided="true" />
+                            <ui:Label text="0" display-tooltip-when-elided="true" name="elementPrice" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="bagCover">
+                    <ui:VisualElement name="bagTransform">
+                        <ui:VisualElement>
+                            <ui:VisualElement class="test" style="background-color: rgb(144, 144, 144);" />
+                            <ui:Label text="测试文本" />
+                        </ui:VisualElement>
+                        <ui:VisualElement disable="true" enable="false" />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                        <ui:VisualElement />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="extendsInfo" class="extends-info" style="display: none;">
+                <ui:Label text="0/0" display-tooltip-when-elided="true" name="remainText" />
+                <ui:Label text="背包容量" display-tooltip-when-elided="true" enable-rich-text="false" class="label" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

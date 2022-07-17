@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="elementInformation" src="project://database/Assets/UI/XML/tradeElementInformation.uxml?fileID=9197481963319205126&amp;guid=726287dfcb7124649b88a5845c009616&amp;type=3#tradeElementInformation" />
+    <ui:Template name="forgingMenu" src="project://database/Assets/UI/XML/tradeForgingMenu.uxml?fileID=9197481963319205126&amp;guid=47f94a921a8009948a2715004d334893&amp;type=3#tradeForgingMenu" />
+    <ui:Template name="elementSelector" src="project://database/Assets/UI/XML/tradeElementSelector.uxml?fileID=9197481963319205126&amp;guid=219aeba1ca183144299d68fbabcab5e4&amp;type=3#tradeElementSelector" />
+    <Style src="project://database/Assets/UI/USS/style.uss?fileID=7433441132597879392&amp;guid=ba6b73653c5d95d4d88c788a52f1e1bb&amp;type=3#style" />
+    <Style src="project://database/Assets/UI/USS/button.uss?fileID=7433441132597879392&amp;guid=59c14cde4aa009949b9be9e4eed7d806&amp;type=3#button" />
+    <ui:VisualElement style="position: absolute; height: 633px; width: 693px; left: 50%; translate: -1165px 0; background-image: url(&apos;project://database/Assets/UI/Sprite/board2.png?fileID=21300000&amp;guid=93d569388b1fe1d4fb298cb6f37848d0&amp;type=3#board2&apos;); top: 20px; -unity-slice-right: -7; -unity-slice-bottom: -7; -unity-slice-left: -7; -unity-slice-top: -7;" />
+    <ui:VisualElement style="flex-direction: row; width: 100%; height: 100%; transition-duration: 1s; align-items: flex-start; justify-content: space-between; padding-left: 20px; padding-right: 20px; padding-top: 20px; padding-bottom: 20px;">
+        <ui:Instance template="elementInformation" name="elementInformationContainer" style="transition-duration: 0.5s; translate: -174px 0;" />
+        <ui:VisualElement name="funtion" class="button-group">
+            <ui:Button text="撤销" display-tooltip-when-elided="true" name="undoButton" style="display: none;" />
+            <ui:Button text="还原" display-tooltip-when-elided="true" name="redoButton" style="display: none;" />
+            <ui:Slider picking-mode="Ignore" value="0" high-value="45" name="rotateSlider" low-value="-45" style="height: 23px; position: relative; width: 123px; display: none;" />
+            <ui:Slider picking-mode="Ignore" value="1" high-value="2" name="zoomSlider" low-value="0.1" show-input-field="false" style="height: 23px; width: 123px; display: none;" />
+        </ui:VisualElement>
+        <ui:Instance template="forgingMenu" name="forgingMenu" style="transition-duration: 0.5s; translate: 172px 0;" />
+    </ui:VisualElement>
+    <ui:Button text="画好了" display-tooltip-when-elided="true" name="Next" style="position: absolute; bottom: 20px; right: 20px; font-size: 25px; padding-right: 20px; padding-left: 20px; padding-top: 5px; padding-bottom: 5px; border-top-left-radius: -34px; border-bottom-left-radius: -34px; border-top-right-radius: -34px; border-bottom-right-radius: -34px; width: 130px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; color: rgb(255, 255, 255);" />
+    <ui:Button text="上一步" display-tooltip-when-elided="true" name="Prev" style="position: absolute; bottom: 76px; right: 20px; font-size: 25px; padding-right: 20px; padding-left: 20px; padding-top: 5px; padding-bottom: 5px; border-top-left-radius: -34px; border-bottom-left-radius: -34px; border-top-right-radius: -34px; border-bottom-right-radius: -34px; width: 130px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; color: rgb(255, 255, 255);" />
+    <ui:Button text="取消" display-tooltip-when-elided="true" name="Cancel" style="position: absolute; bottom: 132px; right: 20px; font-size: 25px; padding-right: 20px; padding-left: 20px; padding-top: 5px; padding-bottom: 5px; border-top-left-radius: -34px; border-bottom-left-radius: -34px; border-top-right-radius: -34px; border-bottom-right-radius: -34px; width: 130px; border-left-width: 0; border-right-width: 0; border-top-width: 0; border-bottom-width: 0; color: rgb(255, 255, 255);" />
+    <ui:VisualElement name="canvasCover" class="canvas-cover" style="height: 633px; width: 942px; background-image: url(&apos;project://database/Assets/UI/Sprite/board.png?fileID=21300000&amp;guid=85a5eb17b3ec6b9499952432d9846395&amp;type=3#board&apos;); overflow: hidden; justify-content: center; align-items: center; position: absolute; left: 50%; translate: -50% 0; flex-shrink: 0; flex-grow: 0; top: 20px; -unity-slice-right: 156; -unity-slice-bottom: 6; -unity-slice-left: 33;">
+        <ui:VisualElement style="position: absolute;">
+            <ui:VisualElement name="transform" style="position: relative; transition-property: scale;">
+                <ui:VisualElement name="drawCanvas" class="drawCanvas">
+                    <ui:VisualElement name="forgingPreview" />
+                </ui:VisualElement>
+                <ui:VisualElement name="pixelPreview" picking-mode="Ignore" style="opacity: 0.87; position: absolute; left: 0; top: 0; width: 10px; height: 10px; background-color: rgba(76, 178, 255, 0.41); display: flex;" />
+                <ui:VisualElement name="massPreview" picking-mode="Ignore" style="opacity: 0.87; position: absolute; left: 0; top: 0; width: 10px; height: 10px; background-color: rgba(255, 76, 145, 0.41); display: none; border-top-left-radius: 50%; border-bottom-left-radius: 50%; border-top-right-radius: 50%; border-bottom-right-radius: 50%;" />
+                <ui:VisualElement name="holderPreview" picking-mode="Ignore" style="opacity: 0.87; position: absolute; left: 0; top: 0; width: 10px; height: 10px; background-color: rgba(168, 194, 8, 0.92); display: none;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    <ui:Instance template="elementSelector" name="elementSelectorContainer" style="position: absolute; bottom: 0; width: 100%; transition-duration: 0.5s; translate: 0 104px;" />
+</ui:UXML>

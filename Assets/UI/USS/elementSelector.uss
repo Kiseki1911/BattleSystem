@@ -1,0 +1,53 @@
+.elementSelector {
+    position: absolute;
+    bottom: 0;
+    width: 68%;
+    height: 100px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 8px;
+    padding-bottom: 4px;
+    padding-right: 10px;
+    padding-top: 22px;
+    left: 50%;
+    translate: -50% 0;
+    background-image: url('project://database/Assets/UI/Sprite/bag.png?fileID=21300000&guid=2c28b932a78120c499227ff6f8f1fc74&type=3#bag');
+}
+
+.element {
+    width: 90px;
+    height: 90px;
+    margin-right: 5px;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: url('project://database/Assets/UI/Sprite/materialBound.png?fileID=-781595442&guid=dd63cc5f1b5468747bc8e0197b5d48fd&type=3#materialBound_0');
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+    -unity-slice-left: 12;
+    -unity-slice-top: 12;
+    -unity-slice-right: 12;
+    -unity-slice-bottom: 12;
+}
+
+.element .icon {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(255, 255, 255);
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.element:hover {
+    transition-property: none;
+    scale: 1.1 1.1;
+}
+
+.element:disabled {
+    transition-property: none;
+    scale: 1 1;
+    background-image: url('project://database/Assets/UI/Sprite/materialBound.png?fileID=-1933389503&guid=dd63cc5f1b5468747bc8e0197b5d48fd&type=3#materialBound_1');
+}

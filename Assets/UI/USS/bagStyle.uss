@@ -1,0 +1,235 @@
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    -unity-text-align: upper-center;
+    color: rgb(43, 43, 43);
+    justify-content: center;
+    align-items: center;
+}
+
+.assets-cover {
+    height: 384px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.assets-cover > VisualElement {
+    background-color: rgb(221, 221, 221);
+    width: 150px;
+    height: 150px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-color: rgb(10, 10, 10);
+    border-right-color: rgb(10, 10, 10);
+    border-top-color: rgb(10, 10, 10);
+    border-bottom-color: rgb(10, 10, 10);
+    margin-left: 19px;
+    margin-right: 19px;
+    margin-top: 19px;
+    margin-bottom: 19px;
+}
+
+#tab {
+    flex-direction: row;
+    flex-shrink: 0;
+    width: 470px;
+    background-image: url('project://database/Assets/UI/Sprite/pannel_background.png?fileID=21300000&guid=5f0e4d649869e5b46bf184b31affbddd&type=3#pannel_background');
+    justify-content: space-around;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    -unity-slice-left: 29;
+    -unity-slice-top: 29;
+    -unity-slice-right: 29;
+    -unity-slice-bottom: 29;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.body {
+    flex-grow: 1;
+    margin-top: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-image: url('project://database/Assets/UI/Sprite/pannel_background.png?fileID=21300000&guid=5f0e4d649869e5b46bf184b31affbddd&type=3#pannel_background');
+    -unity-slice-left: 40;
+    -unity-slice-top: 40;
+    -unity-slice-right: 40;
+    -unity-slice-bottom: 40;
+}
+
+#tab Button {
+    width: 211px;
+    font-size: 21px;
+    background-image: url('project://database/Assets/UI/Sprite/button2.png?fileID=-866388204&guid=6f1c1a948a024f243a4e0ea1d2352179&type=3#button2_1');
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    text-shadow: 0 1px 1px rgb(0, 0, 0);
+    height: 45px;
+}
+
+#tab .active {
+    background-image: url('project://database/Assets/UI/Sprite/button2.png?fileID=136268173&guid=6f1c1a948a024f243a4e0ea1d2352179&type=3#button2_0');
+}
+
+.extends-info {
+    height: 47px;
+    flex-direction: row-reverse;
+    flex-shrink: 0;
+}
+
+.extends-info Label {
+    font-size: 16px;
+}
+
+.preview-cover {
+    width: 244px;
+    height: 100%;
+    overflow: hidden;
+    background-image: url('project://database/Assets/UI/Sprite/border2.png?fileID=21300000&guid=ac74311b745ad1d40b4c6bd3e19f884c&type=3#border2');
+    -unity-background-image-tint-color: rgb(255, 255, 255);
+    align-items: center;
+}
+
+.weapon-info {
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.weapon-info > VisualElement {
+    flex-direction: row;
+}
+
+.weapon-info Label {
+    -unity-text-align: upper-left;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+
+.weapon-name {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+    -unity-font-style: bold;
+}
+
+#bagCover {
+    flex-grow: 1;
+    height: 100%;
+    margin-left: 20px;
+    padding: 15px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-image: url('project://database/Assets/UI/Sprite/border2.png?fileID=21300000&guid=ac74311b745ad1d40b4c6bd3e19f884c&type=3#border2');
+}
+
+#bagTransform {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#bagTransform > VisualElement {
+    width: 120px;
+    height: 120px;
+    border-width: 8px;
+    border-color: rgb(216, 216, 216);
+    border-radius: 15px;
+    margin-left: 9px;
+    margin-right: 9px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    overflow: hidden;
+    transition-duration: 0.25s;
+    transform-origin: center 82%;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-color: rgb(255, 255, 255);
+}
+
+#bagTransform > VisualElement:hover {
+    scale: 1.1 1.1;
+}
+
+#bagTransform > VisualElement:enabled {
+    border-color: rgb(255, 255, 255);
+}
+
+#bagTransform > VisualElement.active {
+    border-color: rgb(255, 215, 15);
+}
+
+#bagTransform > VisualElement:disabled {
+    opacity: 1;
+    scale: 1 1;
+    border-color: rgb(217, 217, 217);
+    background-color: rgb(232, 232, 232);
+}
+
+#bagTransform > VisualElement > Label {
+    font-size: 15px;
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+}
+
+#bagTransform > VisualElement > VisualElement {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+Button {
+    transition-duration: 0.25s;
+    transform-origin: center 85%;
+}
+
+Button:hover {
+    scale: 1.05 1.05;
+}
+
+Button:active {
+    scale: 0.95 0.95;
+}

@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/rightMenu.uss?fileID=7433441132597879392&amp;guid=a389a06c691fd3c4c8fef7ea212cd14b&amp;type=3#rightMenu" />
+    <ui:VisualElement name="mask" style="width: 1366px; height: 768px;" />
+    <ui:VisualElement name="container" style="border-top-left-radius: 8px; border-bottom-left-radius: 8px; border-top-right-radius: 8px; border-bottom-right-radius: 8px; border-left-width: 2px; border-right-width: 2px; border-top-width: 2px; border-bottom-width: 2px; border-left-color: rgba(255, 243, 189, 0.38); border-right-color: rgba(255, 243, 189, 0.38); border-top-color: rgba(255, 243, 189, 0.38); border-bottom-color: rgba(255, 243, 189, 0.38); overflow: hidden; position: absolute;" />
+</ui:UXML>

@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/USS/button.uss?fileID=7433441132597879392&amp;guid=59c14cde4aa009949b9be9e4eed7d806&amp;type=3#button" />
+    <Style src="project://database/Assets/UI/USS/modal.uss?fileID=7433441132597879392&amp;guid=71a724e241f3ae04496594e58b65b528&amp;type=3#modal" />
+    <ui:VisualElement name="mask" class="mask" />
+    <ui:VisualElement name="modalCover" class="modalCover">
+        <ui:Label text="标题" display-tooltip-when-elided="true" name="title" class="title" />
+        <ui:Label text="正文内容" display-tooltip-when-elided="true" name="content" class="content" />
+        <ui:VisualElement style="position: absolute; bottom: 34px; flex-direction: row;">
+            <ui:Button text="确定" display-tooltip-when-elided="true" name="confirm" />
+            <ui:Button text="取消" display-tooltip-when-elided="true" name="cancel" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,44 @@
+.title {
+    position: absolute;
+    font-size: 20px;
+    top: 45px;
+    color: rgb(46, 46, 46);
+}
+
+.modalCover {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 599px;
+    height: 334px;
+    translate: -50% -50%;
+    background-image: url('project://database/Assets/UI/Sprite/modal.png?fileID=21300000&guid=a1b4702a0d7f5ad408445ab6001061b4&type=3#modal');
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out-elastic;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.52);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.content {
+    font-size: 20px;
+    position: absolute;
+    top: 135px;
+}
+
+#modalContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
