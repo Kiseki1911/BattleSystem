@@ -499,6 +499,14 @@ MonoBehaviour:
   maxHealth: 100
   attackDamange: 20
   isRoundAttack: 0
+  unitSees:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isSeeingPlayer: 0
+  seeRange: 5
 --- !u!114 &1699405025409994213
 MonoBehaviour:
   m_ObjectHideFlags: 0

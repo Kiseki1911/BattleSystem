@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class CharacterActions : MonoBehaviour
 {
     private Fatigue fatigue;
+    public Slider healthBar;
     public Vector3 targetPos;
     public float speed = 0.5f;
     public GameObject weapon;
@@ -30,11 +31,12 @@ public class CharacterActions : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position,targetPos,WeaponManager.Instance.moveDelay);
         fatigue.DecreaseFat(1);
+        healthBar.value = curHealth;
     }
     public void Movement(Vector3 directionUnit){
         rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1f);
         for(int i=0; i <rayResults.Length;i++){
-            Debug.Log(rayResults[i].collider.name);
+            //Debug.Log(rayResults[i].collider.name);
             if(rayResults[i].collider.tag=="Wall"){
                 //Debug.Log("wall ahead");
                 return;
@@ -91,5 +93,8 @@ public class CharacterActions : MonoBehaviour
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);
         }
         gameObject.SetActive(false);
+
+        //end game logic
     }
+    
 }

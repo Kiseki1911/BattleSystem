@@ -42,9 +42,8 @@ public class AbilityManager : MonoBehaviour
                 
                     break;
                 case 2:
-                
-                    Debug.Log("use ability "+ inUse.AbName);
                     
+                    Debug.Log("use ability "+ inUse.AbName);
                     break;
             }
         }

@@ -91,12 +91,20 @@ public class EnemyManager : MonoBehaviour
         }
     }
     private void OnDeath(){
+        DropItem();
         if(transform.GetComponentInChildren<Projectile>()!=null){
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);
         }
         transform.parent.GetComponent<roomGen>().onEnemyDeath();
         gameObject.SetActive(false);
     }
+
+    void DropItem(){
+
+    }
+
+
+
 
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("coli something");
@@ -113,12 +121,12 @@ public class EnemyManager : MonoBehaviour
 
     private bool SeePlayer(int viewRange){
         int units = Physics2D.OverlapCircleNonAlloc(transform.position, viewRange,unitSees);
-        Debug.Log(units);
+        //Debug.Log(units);
         if(units>0){
             for(int i =0;i<units;i++){
                 //Debug.Log(unitSees[i]);
                 if(unitSees[i].CompareTag("Player")){
-                    Debug.Log("sees player");
+                    //Debug.Log("sees player");
                     return true;
                 }
             }
