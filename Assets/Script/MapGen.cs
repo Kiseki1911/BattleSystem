@@ -167,7 +167,6 @@ public class MapGen : MonoBehaviour
 	public UnityEngine.Tilemaps.Tilemap map;
 	public UnityEngine.Tilemaps.Tilemap objMap;
 	public GridLayout grid;
-	public GameObject door;
 	public UnityEngine.Tilemaps.TileBase road;
 	public Stack<(roomGen,Vector3Int)> roomStack=new Stack<(roomGen,Vector3Int)>();
  	public UnityEngine.Tilemaps.TileBase wall;
@@ -346,6 +345,10 @@ public class MapGen : MonoBehaviour
 		startRoom = Generate.generateRooms(rooms,roomNum,new Tuple<int, int>(mapH,mapW));
 		map.ClearAllTiles();
 		objMap.ClearAllTiles();
+		for (int i = 0; i < objMap.transform.childCount; i++)
+		{
+			Destroy(objMap.transform.GetChild(i).gameObject);
+		}		
 		showRoom();
 		return playerPos;
 	}

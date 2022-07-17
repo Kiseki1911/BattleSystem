@@ -23,20 +23,20 @@ public class roomGen: MonoBehaviour
     private List<GameObject> realDoors=new List<GameObject>();
     private void Awake() {
         if((doors&1)==1){
-            realDoors.Add(Instantiate(left,leftDoor+gameObject.transform.position,Quaternion.identity,gameObject.transform));
+            realDoors.Add(Instantiate(left,leftDoor+transform.position,Quaternion.identity,transform.parent));
 		}
 		if((doors&2)>>1==1){
-            realDoors.Add(Instantiate(right,rightDoor+gameObject.transform.position,Quaternion.identity,gameObject.transform));
+            realDoors.Add(Instantiate(right,rightDoor+transform.position,Quaternion.identity,transform.parent));
 		}
 		if((doors&4)>>2==1){
-            realDoors.Add(Instantiate(top,topDoor+gameObject.transform.position,Quaternion.identity,gameObject.transform));
+            realDoors.Add(Instantiate(top,topDoor+transform.position,Quaternion.identity,transform.parent));
 		}
 		if((doors&8)>>3==1){
-            realDoors.Add(Instantiate(bottom,bottomDoor+gameObject.transform.position,Quaternion.identity,gameObject.transform));
+            realDoors.Add(Instantiate(bottom,bottomDoor+transform.position,Quaternion.identity,transform.parent));
 		}
         foreach (var item in enemyPos)
         {
-            Instantiate(enemy,item+gameObject.transform.position,Quaternion.identity,gameObject.transform);
+            Instantiate(enemy,item+transform.position,Quaternion.identity,transform);
         }
     }
     public void onEnemyDeath(){
@@ -47,5 +47,18 @@ public class roomGen: MonoBehaviour
                 item.GetComponentInChildren<Door>().openDoor();
             }
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag=="Player"){
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(true);
+            }
+            foreach (var item in realDoors)
+            {
+                item.GetComponentInChildren<Door>().lockDoor();
+            }
+        }
+        GetComponent<Collider2D>().enabled=false;
     }
 }
