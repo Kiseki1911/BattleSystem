@@ -174,7 +174,7 @@ public class MapGen : MonoBehaviour
 	private Vector3Int endPos;
 	private List<Vector3Int> teleportCandidate = new List<Vector3Int>();
 	public Room startRoom=null;
-	public GridBrushBase telepoint;
+	public GameObject telepoint;
 	void showRoom(){
 		showRoomHelper(startRoom);
 		int count=0;
@@ -182,7 +182,7 @@ public class MapGen : MonoBehaviour
 		{
 			if(UnityEngine.Random.Range(0,teleportCandidate.Count-count)==0)
 			{
-				telepoint.Paint(grid,objMap.gameObject,item);
+				Instantiate(telepoint,item,Quaternion.identity,objMap.transform);
 				count=0;
 			}
 			else
@@ -343,7 +343,7 @@ public class MapGen : MonoBehaviour
 	public Vector3Int creatMap(){
 		startRoom = Generate.generateRooms(rooms,roomNum,new Tuple<int, int>(mapH,mapW));
 		map.ClearAllTiles();
-		objMap.ClearAllTiles();
+		teleportCandidate.Clear();
 		for (int i = 0; i < objMap.transform.childCount; i++)
 		{
 			Destroy(objMap.transform.GetChild(i).gameObject);

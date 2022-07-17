@@ -58,7 +58,7 @@ MonoBehaviour:
   enemyPos:
   - {x: 3, y: 3, z: 0}
   teleportPos: {x: 3, y: 3, z: 0}
-  doors: 10
+  doors: 0
 --- !u!61 &7781821076468903148
 BoxCollider2D:
   m_ObjectHideFlags: 0
