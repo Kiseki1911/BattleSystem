@@ -20,6 +20,8 @@ public class DialogueSystem : MonoBehaviour
     private void OnEnable() {
         textLabel.text = textList[index];
         index++;
+        Time.timeScale=0;
+        PlayerManager.isControlling=false;
     }
 
     // Update is called once per frame
@@ -28,6 +30,8 @@ public class DialogueSystem : MonoBehaviour
         if((Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0))&&index==textList.Count){
             gameObject.SetActive(false);
             index=0;
+            Time.timeScale=1;
+            PlayerManager.isControlling=true;
             return;
         }
         if((Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0))){

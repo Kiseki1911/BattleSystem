@@ -210,14 +210,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon:
-    count: 0
+    title: 
     price: 0
     mass: 0
     hardness: 0
+    durability: 0
     massCenter: {x: 0, y: 0}
     handle: {x: 0, y: 0}
     diraction: {x: 0, y: 0}
     type: 0
+    effects: []
+    matrixSize: 0
 --- !u!1 &1699405025156567910
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +463,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1699405025409994214
 Transform:
   m_ObjectHideFlags: 0
@@ -499,6 +502,15 @@ MonoBehaviour:
   maxHealth: 100
   attackDamange: 20
   isRoundAttack: 0
+  unitSees:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  isSeeingPlayer: 0
+  seeRange: 5
+  deathEffect: {fileID: 407439392378138301, guid: f3f07c3807a8f19488e55687ec59496f, type: 3}
 --- !u!114 &1699405025409994213
 MonoBehaviour:
   m_ObjectHideFlags: 0

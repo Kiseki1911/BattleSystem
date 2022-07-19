@@ -20,6 +20,8 @@ public class EnemyManager : MonoBehaviour
     public Collider2D[] unitSees = new Collider2D[5];
     public bool isSeeingPlayer=false;
     public int seeRange=5;
+
+    public ParticleSystem deathEffect;
     
     RaycastHit2D[] rayResults;
     // Start is called before the first frame update
@@ -91,6 +93,7 @@ public class EnemyManager : MonoBehaviour
         }
     }
     private void OnDeath(){
+        Instantiate(deathEffect,transform.position, Quaternion.identity);
         DropItem();
         if(transform.GetComponentInChildren<Projectile>()!=null){
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);

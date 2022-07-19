@@ -18,3 +18,4 @@
 *.renderTexture       merge=binary
 *.shadervariants      merge=binary
 *.unity               merge=binary
+*.png                 merge=binary

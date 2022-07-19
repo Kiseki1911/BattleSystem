@@ -43,11 +43,11 @@ public class CharacterActions : MonoBehaviour
                 return;
             }
         }
-        anim.SetBool("Moving",false);
+       
         Debug.DrawRay(transform.position, directionUnit, Color.green);
         if((targetPos-transform.position).magnitude<0.05){
             targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
-            anim.SetBool("Moving",true);
+            
             fatigue.IncreaseFat(30);
         }
         
@@ -99,5 +99,4 @@ public class CharacterActions : MonoBehaviour
 
         //end game logic
     }
-    
 }

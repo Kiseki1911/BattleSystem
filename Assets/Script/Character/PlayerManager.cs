@@ -11,6 +11,7 @@ public class PlayerManager : MonoBehaviour
 
     public int mouseLeftSkill = 1;
     public int mouseRightSkill = 2;
+    public static bool isControlling = false;
     private CharacterActions me;
     void Start()
     {
@@ -20,7 +21,9 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerInput();
+        if(isControlling){
+            PlayerInput();
+        }
     }
 
     private void PlayerInput(){
@@ -28,6 +31,13 @@ public class PlayerManager : MonoBehaviour
         inputY = Input.GetAxisRaw("Vertical");
         if(inputX!=0||inputY!=0){
             me.Movement(new Vector3(Mathf.RoundToInt(inputX),Mathf.RoundToInt(inputY),0));
+            me.anim.SetBool("Moving",true);
+            if(inputX!=0){
+                me.transform.GetChild(0).transform.localScale=new Vector3(-Mathf.RoundToInt(inputX),1,1);
+            }
+        }
+        else{
+            me.anim.SetBool("Moving",false);
         }
         //me.isRoundAttack = Input.GetMouseButton(0);
         if(Input.GetMouseButtonUp(0)){
