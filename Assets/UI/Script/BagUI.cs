@@ -81,12 +81,13 @@ public class BagUI : MonoBehaviour
   void Start()
   {
     Instance = this;
-    uiDocument = GetComponent<UIDocument>();
+  }
+  private void OnEnable() {
     init();
   }
-
   private void init()
   {
+    uiDocument = GetComponent<UIDocument>();
     root = uiDocument.rootVisualElement.Q("root");
 
     tab = root.Q("tab");
