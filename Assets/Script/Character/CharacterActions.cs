@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class CharacterActions : MonoBehaviour
 {
     private Fatigue fatigue;
-    public Slider healthBar;
     public Image HP_UI;
     public Vector3 targetPos;
     public float speed = 0.5f;
@@ -32,7 +31,6 @@ public class CharacterActions : MonoBehaviour
     {
         transform.position = Vector3.Lerp(transform.position,targetPos,WeaponManager.Instance.moveDelay);
         fatigue.DecreaseFat(1);
-        healthBar.value = curHealth;
         if(HP_UI != null)
         {
           HP_UI.fillAmount = curHealth / maxHealth;

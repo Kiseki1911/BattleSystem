@@ -10,8 +10,6 @@ public class Fatigue:MonoBehaviour
     public float decreaseRate=1f;
     public float increaseRate=1f;
 
-    public Slider playerFatigue;
-
     public Image SP_UI;
 
     private void Start() {
@@ -19,7 +17,6 @@ public class Fatigue:MonoBehaviour
     }
 
     private void LateUpdate() {
-        playerFatigue.value = fat;
         if(SP_UI != null)
         {
           SP_UI.fillAmount = Mathf.Max(0, 1f - fat / 200f);
