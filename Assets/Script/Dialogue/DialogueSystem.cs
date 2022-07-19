@@ -1,0 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class DialogueSystem : MonoBehaviour
+{
+    public TMP_Text textLabel;
+    public Image characterImage;
+    public TextAsset textFile;
+
+    public int index;
+    List<string> textList = new List<string>();
+    private void Awake()
+    {
+        GetTextFromFile(textFile);
+        
+    }
+    private void OnEnable() {
+        textLabel.text = textList[index];
+        index++;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if((Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0))&&index==textList.Count){
+            gameObject.SetActive(false);
+            index=0;
+            return;
+        }
+        if((Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0))){
+            textLabel.text = textList[index];
+
+            index++;
+        }
+    }
+    void GetTextFromFile(TextAsset file){
+        textList.Clear();
+        index = 0;
+        var lineData = file.text.Split('\n');
+        foreach(var line in lineData){
+            textList.Add(line);
+        }
+    }
+}

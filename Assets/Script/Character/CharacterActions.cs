@@ -14,6 +14,7 @@ public class CharacterActions : MonoBehaviour
     public float rotation_z;
     public int curHealth;
     public int maxHealth = 100;
+    public Animator anim;
     
     public bool isRoundAttack;
 
@@ -42,11 +43,13 @@ public class CharacterActions : MonoBehaviour
                 return;
             }
         }
+        anim.SetBool("Moving",false);
         Debug.DrawRay(transform.position, directionUnit, Color.green);
-            if((targetPos-transform.position).magnitude<0.05){
-                targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
-                fatigue.IncreaseFat(30);
-            }
+        if((targetPos-transform.position).magnitude<0.05){
+            targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
+            anim.SetBool("Moving",true);
+            fatigue.IncreaseFat(30);
+        }
         
     }
     public void RoundAttack(){
