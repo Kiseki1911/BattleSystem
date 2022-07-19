@@ -1171,8 +1171,8 @@ MonoBehaviour:
     m_Extent: {x: 0.9985302, y: 0.99853027, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 3.8399131
-  m_PointLightOuterRadius: 8.27636
+  m_PointLightInnerRadius: 0
+  m_PointLightOuterRadius: 1
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -2088,7 +2088,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.925, y: 1}
+    m_SensorSize: {x: 2.2528148, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -3586,7 +3586,7 @@ Transform:
   - {fileID: 1638352467}
   m_Father: {fileID: 427101128}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 3.238}
 --- !u!1 &2087734454
 GameObject:
   m_ObjectHideFlags: 0

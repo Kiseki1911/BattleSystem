@@ -16,8 +16,9 @@ public class MapControl : MonoBehaviour
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.I)){
-            forgeUi.SetActive(true);
-            eventSystem.SetActive(false);
+            forgeUi.SetActive(!forgeUi.activeSelf);
+            eventSystem.SetActive(!eventSystem.activeSelf);
+            player.GetComponent<PlayerManager>().enabled=!player.GetComponent<PlayerManager>().enabled;
         }
     }
 

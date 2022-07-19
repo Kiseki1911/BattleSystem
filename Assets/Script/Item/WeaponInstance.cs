@@ -7,11 +7,18 @@ public class WeaponInstance : MonoBehaviour
     public Weapon weapon;
     private float speed;
     private Vector3 oldPos;
+
+    private int currentWeapon=0;
+
+    static public WeaponInstance instance;
+    private void Awake() {
+        instance=this;
+    }
     // Start is called before the first frame update
     void Start()
     {
         transform.localPosition=-weapon.handle;
-        weapon = BackPack.Instance.weaponList[0];
+        weapon = BackPack.Instance.weaponList[currentWeapon];
         oldPos=transform.position;
         GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),Vector2.zero,64);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
@@ -34,5 +41,12 @@ public class WeaponInstance : MonoBehaviour
             other.gameObject.GetComponentInParent<EnemyManager>().TakeDamage((int)(weapon.damageRate*speed));
             Debug.Log(other.gameObject.GetComponentInParent<EnemyManager>().curHealth);
         }
+    }
+    public void changeWeapon(int i){
+        currentWeapon=i;
+        weapon = BackPack.Instance.weaponList[currentWeapon];
+        Destroy(GetComponent<PolygonCollider2D>());
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),Vector2.zero,64);
+        gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
     }
 }
