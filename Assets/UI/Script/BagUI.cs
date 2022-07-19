@@ -308,6 +308,7 @@ public class BagUI : MonoBehaviour
               activeWeapon = i;
               updateGridPartical();
               updatePreviewer();
+              WeaponInstance.instance.changeWeapon(activeWeapon);
             }
           });
         }

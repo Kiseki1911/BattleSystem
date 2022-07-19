@@ -5,27 +5,48 @@ using UnityEngine;
 public class WeaponInstance : MonoBehaviour
 {
     public Weapon weapon;
+    private float speed;
+    private Vector3 oldPos;
+
+    private int currentWeapon=0;
+
+    static public WeaponInstance instance;
+    private void Awake() {
+        instance=this;
+    }
     // Start is called before the first frame update
     void Start()
     {
-        weapon = new Weapon(WeaponType.sword,10);
+        transform.localPosition=-weapon.handle;
+        weapon = BackPack.Instance.weaponList[currentWeapon];
+        oldPos=transform.position;
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),Vector2.zero,64);
+        gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
-        
-        //gameObject.transform.eulerAngles = refe.transform.eulerAngles;
+        speed=(transform.position-oldPos).magnitude;
+        oldPos=transform.position;
     }
-    private void OnTriggerEnter2D(Collider2D other) {
+    protected void OnTriggerEnter2D(Collider2D other) {
         
         if(other.gameObject.GetComponentInParent<EnemyManager>()!=null && other.CompareTag("Enemy")){
             var collisionPoint = other.ClosestPoint(transform.position);
             Debug.Log(collisionPoint);
             WeaponManager.Instance.onHit=true;
             StartCoroutine(WeaponManager.Instance.OnHit(collisionPoint));
-            other.gameObject.GetComponentInParent<EnemyManager>().TakeDamage((int)weapon.damageRate);
+            Debug.Log((weapon.damageRate*speed));
+            other.gameObject.GetComponentInParent<EnemyManager>().TakeDamage((int)(weapon.damageRate*speed));
             Debug.Log(other.gameObject.GetComponentInParent<EnemyManager>().curHealth);
         }
+    }
+    public void changeWeapon(int i){
+        currentWeapon=i;
+        weapon = BackPack.Instance.weaponList[currentWeapon];
+        Destroy(GetComponent<PolygonCollider2D>());
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),Vector2.zero,64);
+        gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
     }
 }

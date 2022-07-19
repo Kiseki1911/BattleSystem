@@ -52,4 +52,8 @@ public class WeaponManager : MonoBehaviour
         Instantiate(onHitEffect,colliPoint, Quaternion.Euler(weaponInHand.transform.localRotation.x,weaponInHand.transform.localRotation.y-90,weaponInHand.transform.localRotation.z));
         onHit = false;
     }
+
+    public void changeWeapon(Weapon newWeapon){
+
+    }
 }

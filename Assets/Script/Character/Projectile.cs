@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : WeaponInstance
 {
     public GameObject player;
     private bool onHit = false;
@@ -11,6 +11,9 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        weapon = BackPack.Instance.weaponList[0];
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),Vector2.zero,64);
+        gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
         //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1,0);
         StartCoroutine(SelfReturn(10));
 
@@ -29,7 +32,7 @@ public class Projectile : MonoBehaviour
             }
         }
     }
-    private void FixedUpdate() {
+    protected void FixedUpdate() {
         if(onReturn){
             Vector3 direction = player.transform.position - transform.position;
             direction.Normalize();
@@ -39,13 +42,14 @@ public class Projectile : MonoBehaviour
             //transform.position = Vector3.Lerp(transform.position,player.transform.position,0.05f);
             //gameObject.GetComponent<Rigidbody2D>().SetRotation(34);
         }
+        base.FixedUpdate();
     }
 
     public void Enter(Vector3 direction){
         gameObject.GetComponent<Rigidbody2D>().AddForce(1000*direction);
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    protected void OnTriggerEnter2D(Collider2D other) {
         if(other.tag =="Enemy"||other.tag == "Wall"){
             gameObject.transform.SetParent(other.transform);
 
@@ -61,6 +65,7 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);                
             }
         }
+        base.OnTriggerEnter2D(other);
     }
     IEnumerator SelfReturn(float time){
         yield return new WaitForSeconds(time);
