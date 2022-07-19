@@ -36,6 +36,7 @@ public class AbilityManager : MonoBehaviour
                 
                     Debug.Log("use ability "+ inUse.AbName);
                     GameObject proj = Instantiate(weaponPrefab,WeaponManager.Instance.weaponInHand.transform.position,WeaponManager.Instance.weaponInHand.transform.rotation);
+                    Debug.Log(proj.transform.position);
                     offHand = true;
                     WeaponManager.Instance.weaponInHand.SetActive(!offHand);
                     proj.GetComponent<Projectile>().Enter(proj.transform.right);
