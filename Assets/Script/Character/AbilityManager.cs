@@ -39,7 +39,7 @@ public class AbilityManager : MonoBehaviour
                     Debug.Log(proj.transform.position);
                     offHand = true;
                     WeaponManager.Instance.weaponInHand.SetActive(!offHand);
-                    proj.GetComponent<Projectile>().Enter(proj.transform.right);
+                    proj.GetComponent<Projectile>().Enter(proj.transform.up);
                 
                     break;
                 case 2:

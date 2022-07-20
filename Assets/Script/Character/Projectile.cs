@@ -11,12 +11,12 @@ public class Projectile : WeaponInstance
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        weapon = BackPack.Instance.weaponList[0];
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),Vector2.zero,64);
-        gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
         //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1,0);
         StartCoroutine(SelfReturn(10));
-
+        currentWeapon= WeaponInstance.instance.currentWeapon; 
+        weapon = BackPack.Instance.weaponList[currentWeapon];
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),weapon.handle/36f,32);
+        gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
     }
 
     // Update is called once per frame

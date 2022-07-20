@@ -185,7 +185,7 @@ public class Weapon :item {
 			{
 				for (int j = 0; j < matrixSize; j++)
 				{
-					res.SetPixel( j,matrixSize-1-i,this[i,j].color);
+					res.SetPixel( i,matrixSize-1-j,this[i,j].color);
 				}
 			}
       res.Apply();

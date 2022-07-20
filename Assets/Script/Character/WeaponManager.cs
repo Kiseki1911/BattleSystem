@@ -34,13 +34,14 @@ public class WeaponManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if(Instance==null)
         Instance = this;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        weaponInHand.transform.eulerAngles = boneReference.transform.eulerAngles;
+        weaponInHand.transform.eulerAngles = boneReference.transform.eulerAngles+Vector3.back*90;
         if(!onHit){
             cursor.transform.position = Vector3.Lerp(cursor.transform.position,Camera.main.ScreenToWorldPoint(Input.mousePosition),swingDelay);
         }
