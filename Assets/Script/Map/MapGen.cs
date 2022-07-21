@@ -202,7 +202,8 @@ public class MapGen : MonoBehaviour
 		{
 			for (int j = 0; j < room.room.height; j++)
 			{
-				map.SetTile(room.leftBotConer+new Vector3Int(i,j),roomS.GetTile(new Vector3Int(i,j)));
+				if(roomS.HasTile(new Vector3Int(i,j)))
+				map.SetTile(room.leftBotConer+new Vector3Int(i,j),wall);
 			}
 		}
 		Instantiate(roomdata.gameObject,room.leftBotConer,Quaternion.identity,objMap.transform);
