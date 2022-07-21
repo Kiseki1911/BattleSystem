@@ -13,15 +13,13 @@ MonoBehaviour:
   m_Name: BagList
   m_EditorClassIdentifier: 
   materialList:
-  - material: {fileID: 11400000, guid: 74a62658eb84585499d1d259e4fb0002, type: 2}
-    count: 410
   - material: {fileID: 11400000, guid: f92e38599c2199e468e4b2171e7496df, type: 2}
-    count: 500
+    count: 4
   - material: {fileID: 11400000, guid: 125552be91b9ec0459e7d307003345ed, type: 2}
-    count: 1000
+    count: 897
   - material: {fileID: 11400000, guid: f8cc7b593e189524fb3f60b5dd969222, type: 2}
-    count: 1000
+    count: 593
   - material: {fileID: 11400000, guid: 2af918e67b36779499ee5ad23fb22581, type: 2}
-    count: 50
+    count: 7
   - material: {fileID: 11400000, guid: 8ac45ead17cfab94dbcd07391a201d8c, type: 2}
-    count: 200
+    count: 125

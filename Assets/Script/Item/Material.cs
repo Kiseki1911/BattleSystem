@@ -47,12 +47,16 @@ public class ScriptableItem : ScriptableObject{
 
 [System.Serializable]
 public struct SpecialEffect{
-	public uint id;
+	public string name;
+    public string Discription;
+    public DmgType type;
+    public int strength;
+}
 
-    public float passiveDamage(float dmg){
-        return -1f;
-    }
-    public float passiveAgi(float agi){
-        return -1f;
-    }
+public enum DmgType{
+    PHYSICS=0,
+    FIRE=1,
+    WATER=2,
+    WIND=3,
+    POISON=4
 }

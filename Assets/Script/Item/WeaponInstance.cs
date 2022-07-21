@@ -41,7 +41,7 @@ public class WeaponInstance : MonoBehaviour
             WeaponManager.Instance.onHit=true;
             StartCoroutine(WeaponManager.Instance.OnHit(collisionPoint));
             Debug.Log((weapon.damageRate*speed));
-            other.gameObject.GetComponentInParent<EnemyManager>().TakeDamage((int)(weapon.damageRate*speed));
+            other.gameObject.GetComponentInParent<EnemyManager>().TakeDamage((int)(weapon.damageRate*speed),weapon.effects);
             Debug.Log(other.gameObject.GetComponentInParent<EnemyManager>().curHealth);
         }
     }
@@ -49,7 +49,7 @@ public class WeaponInstance : MonoBehaviour
         currentWeapon=i;
         weapon = BackPack.Instance.weaponList[currentWeapon];
         Destroy(GetComponent<PolygonCollider2D>());
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y,36-weapon.handle.x)/36f,64);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y,36-weapon.handle.x)/36f,32);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
     }
 }
