@@ -14,15 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomList:
   - room:
-    - {fileID: 6713245364056227141, guid: 364ee66c9b311904b83066e96ec2d682, type: 3}
-    - {fileID: 6212982275367151322, guid: ed1477398a014754aab1a9158acb58fe, type: 3}
-    height: 10
-    width: 10
+    - {fileID: 3371402187673192416, guid: 2b35e75eaa3973c4fa0b9a8536c03453, type: 3}
+    - {fileID: 3371402187673192416, guid: e33c2320eecc3384da8dc5a2a346ba43, type: 3}
+    height: 25
+    width: 25
   - room:
-    - {fileID: 1840985554720439036, guid: 4d55893da1ebf9947bc2372543b7dc9d, type: 3}
-    height: 5
-    width: 7
+    - {fileID: 3371402187673192416, guid: ecb2469b61715ab4aba6ab05a178eb1a, type: 3}
+    height: 30
+    width: 30
   - room:
     - {fileID: 5933859944487446554, guid: 8e330db5fdbae0c4cb7c964bbfab52ef, type: 3}
     height: 20
     width: 15
+  - room:
+    - {fileID: 3371402187673192416, guid: d12a73be0bf81e24a840b721c0ad6a5c, type: 3}
+    height: 20
+    width: 21

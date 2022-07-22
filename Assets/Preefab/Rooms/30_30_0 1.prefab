@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8208543715494031532}
   - component: {fileID: 3371402187673192416}
   m_Layer: 0
-  m_Name: roomBase
+  m_Name: 30_30_0 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,16 +44,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95529253a18f67044b110761308b38a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 0}
-  leftDoor: {x: 0, y: 0, z: 0}
-  rightDoor: {x: 0, y: 0, z: 0}
-  topDoor: {x: 0, y: 0, z: 0}
-  bottomDoor: {x: 0, y: 0, z: 0}
+  map: {fileID: 3093163374225185813, guid: 51dc9ab0d1824c64eba72f047c8574b9, type: 3}
+  leftDoor: {x: 0, y: 16, z: 0}
+  rightDoor: {x: 29, y: 22, z: 0}
+  topDoor: {x: 16, y: 29, z: 0}
+  bottomDoor: {x: 8, y: 0, z: 0}
   left: {fileID: 2628112142682073514, guid: dd8327f81ecaf584d998881071897d6c, type: 3}
   right: {fileID: 5702591825414285098, guid: 5f6e3fb4c5eea9a44829de9ffd77cf8a, type: 3}
   top: {fileID: 1340712866875349406, guid: cf1af6ee8c2456944905a96836608010, type: 3}
   bottom: {fileID: 442942399839852457, guid: a93086e44e580ca4cb7c4f5122afdc94, type: 3}
   enemy: {fileID: 1699405025409994209, guid: 635f91da53a903544bd585ef3dc2ec9c, type: 3}
-  enemyPos: []
-  teleportPos: {x: 0, y: 0, z: 0}
-  doors: 0
+  enemyPos:
+  - {x: 23, y: 22, z: 0}
+  - {x: 6, y: 13, z: 0}
+  teleportPos: {x: 4, y: 3, z: 0}
+  doors: 13
