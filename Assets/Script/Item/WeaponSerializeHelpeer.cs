@@ -14,6 +14,9 @@ public class WeaponSerializeHelpeer{
   public string matrix;
   public float durability;
   public List<SpecialEffect> effects;
+  public WeaponSerializeHelpeer(){
+    
+  }
   public WeaponSerializeHelpeer(Weapon weapon){
     mass = weapon.mass;
     hardness = weapon.hardness;
