@@ -41,6 +41,8 @@ public class WeaponManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        swingDelay = 50000f/Mathf.Pow(WeaponInstance.instance.weapon.mass,2);
+        moveDelay = 2000/(WeaponInstance.instance.weapon.mass+2000);
         weaponInHand.transform.eulerAngles = boneReference.transform.eulerAngles+Vector3.back*90;
         if(!onHit){
             cursor.transform.position = Vector3.Lerp(cursor.transform.position,Camera.main.ScreenToWorldPoint(Input.mousePosition),swingDelay);

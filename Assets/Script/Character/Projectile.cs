@@ -10,12 +10,13 @@ public class Projectile : WeaponInstance
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Rigidbody2D>().mass = WeaponInstance.instance.weapon.mass/300;
         player = GameObject.FindGameObjectWithTag("Player");
         //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1,0);
         StartCoroutine(SelfReturn(10));
         currentWeapon= WeaponInstance.instance.currentWeapon; 
         weapon = BackPack.Instance.weaponList[currentWeapon];
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),weapon.handle/36f,32);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),weapon.handle/72f,32);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
     }
 

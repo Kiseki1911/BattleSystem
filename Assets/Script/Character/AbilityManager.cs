@@ -35,7 +35,7 @@ public class AbilityManager : MonoBehaviour
                 case 1:
                     Fatigue.Instance.IncreaseFat(40);
                     Debug.Log("use ability "+ inUse.AbName);
-                    GameObject proj = Instantiate(weaponPrefab,WeaponManager.Instance.weaponInHand.transform.position,WeaponManager.Instance.weaponInHand.transform.rotation);
+                    GameObject proj = Instantiate(weaponPrefab,WeaponInstance.instance.transform.position,WeaponManager.Instance.weaponInHand.transform.rotation);
                     Debug.Log(proj.transform.position);
                     offHand = true;
                     WeaponManager.Instance.weaponInHand.SetActive(!offHand);

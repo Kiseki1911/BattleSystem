@@ -61,7 +61,7 @@ MonoBehaviour:
   - {x: 12, y: 15, z: 0}
   - {x: 15, y: 12, z: 0}
   teleportPos: {x: 21, y: 3, z: 0}
-  doors: 1
+  doors: 15
 --- !u!61 &-1735776857036170948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75,7 +75,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 12.5, y: 12.5}
+  m_Offset: {x: 12, y: 12}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}

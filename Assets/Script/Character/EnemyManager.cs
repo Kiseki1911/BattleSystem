@@ -16,6 +16,7 @@ public class EnemyManager : MonoBehaviour
     public int attackDamange=20;
     
     public bool isRoundAttack;
+    public ParticleSystem deathEffect;
 
     public Collider2D[] unitSees = new Collider2D[5];
     public bool isSeeingPlayer=false;

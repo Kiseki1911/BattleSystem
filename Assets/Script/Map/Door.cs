@@ -15,9 +15,11 @@ public class Door : Interactive
     public void openDoor(){
         //TODO: animation
         boxcollider.enabled=false;
+        transform.parent.GetComponent<SpriteRenderer>().enabled=false;
     }
     public void lockDoor(){
         //TODO: animation
         boxcollider.enabled=true;
+        transform.parent.GetComponent<SpriteRenderer>().enabled=true;
     }
 }

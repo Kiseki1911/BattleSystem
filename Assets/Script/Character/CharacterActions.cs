@@ -32,7 +32,7 @@ public class CharacterActions : MonoBehaviour
     void FixedUpdate()
     {
         transform.position = Vector3.Lerp(transform.position,targetPos,WeaponManager.Instance.moveDelay);
-        fatigue.DecreaseFat(1);
+        fatigue.DecreaseFat(2);
         if(HP_UI != null)
         {
           HP_UI.fillAmount = (float)curHealth / (float)maxHealth;
