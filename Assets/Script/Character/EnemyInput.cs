@@ -71,14 +71,14 @@ public class EnemyInput : MonoBehaviour
             EnemyMoveInput(vInputX,0);
             if(wanderTimer){
                 wanderTimer = false;
-                StartCoroutine(constantWander(Random.Range(3f,7f),0));
+                StartCoroutine(constantWander(Random.Range(1f,3f),0));
             }
         }
         else{
             EnemyMoveInput(0,vInputY);
             if(wanderTimer){
                 wanderTimer = false;
-                StartCoroutine(constantWander(Random.Range(3f,7f),1));
+                StartCoroutine(constantWander(Random.Range(1f,3f),1));
             }
         }
     }

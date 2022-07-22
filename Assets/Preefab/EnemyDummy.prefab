@@ -378,7 +378,7 @@ Animator:
   m_GameObject: {fileID: 1699405025156567910}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9a64d9f7f0c983b47a65bd9609745343, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPos: {x: 0, y: 0, z: 0}
-  speed: 0.02
+  speed: 0.1
   weapon: {fileID: 1699405025368734564}
   weaponRotation_z: 0
   rotation_z: 0

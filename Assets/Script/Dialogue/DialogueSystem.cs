@@ -9,6 +9,7 @@ public class DialogueSystem : MonoBehaviour
     public TMP_Text textLabel;
     public Image characterImage;
     public TextAsset textFile;
+    public float textSpeed;
 
     public int index;
     List<string> textList = new List<string>();
@@ -36,7 +37,6 @@ public class DialogueSystem : MonoBehaviour
         }
         if((Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0))){
             textLabel.text = textList[index];
-
             index++;
         }
     }

@@ -17,6 +17,7 @@ public class CharacterActions : MonoBehaviour
     public Animator anim;
     
     public bool isRoundAttack;
+    public ParticleSystem characterDeath;
 
     RaycastHit2D[] rayResults;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class CharacterActions : MonoBehaviour
         fatigue.DecreaseFat(1);
         if(HP_UI != null)
         {
-          HP_UI.fillAmount = curHealth / maxHealth;
+          HP_UI.fillAmount = (float)curHealth / (float)maxHealth;
         }
     }
     public void Movement(Vector3 directionUnit){
@@ -50,7 +51,9 @@ public class CharacterActions : MonoBehaviour
         Debug.DrawRay(transform.position, directionUnit, Color.green);
         if((targetPos-transform.position).magnitude<0.05){
             targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
-            
+            if(fatigue.fat>=200){
+                TakeDamage(2);
+            }
             fatigue.IncreaseFat(30);
         }
         
@@ -91,6 +94,10 @@ public class CharacterActions : MonoBehaviour
         curHealth -= dmg;
         Debug.Log("player take dmg!"+ curHealth);
         if(curHealth<=0){
+            if(HP_UI != null)
+            {
+                HP_UI.fillAmount = (float)curHealth / (float)maxHealth;
+            }
             OnDeath();
         }
     }
@@ -98,6 +105,7 @@ public class CharacterActions : MonoBehaviour
         if(transform.GetComponentInChildren<Projectile>()!=null){
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);
         }
+        Instantiate(characterDeath,transform.position,Quaternion.identity);
         gameObject.SetActive(false);
 
         //end game logic

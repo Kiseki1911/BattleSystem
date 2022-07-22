@@ -11,7 +11,7 @@ public class WeaponInstance : MonoBehaviour
     private int currentWeapon=0;
 
     static public WeaponInstance instance;
-    private void Awake() {
+    private void OnEnable() {
         instance=this;
     }
     // Start is called before the first frame update

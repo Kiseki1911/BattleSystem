@@ -33,7 +33,7 @@ public class AbilityManager : MonoBehaviour
         {
             switch(ID){
                 case 1:
-                
+                    Fatigue.Instance.IncreaseFat(40);
                     Debug.Log("use ability "+ inUse.AbName);
                     GameObject proj = Instantiate(weaponPrefab,WeaponManager.Instance.weaponInHand.transform.position,WeaponManager.Instance.weaponInHand.transform.rotation);
                     Debug.Log(proj.transform.position);
