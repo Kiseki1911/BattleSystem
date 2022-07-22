@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8208543715494031532}
   - component: {fileID: 3371402187673192416}
+  - component: {fileID: 1705129549067718994}
   m_Layer: 0
-  m_Name: roomBase
+  m_Name: 25_25_1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44,16 +45,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95529253a18f67044b110761308b38a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  map: {fileID: 0}
-  leftDoor: {x: 0, y: 0, z: 0}
-  rightDoor: {x: 0, y: 0, z: 0}
-  topDoor: {x: 0, y: 0, z: 0}
-  bottomDoor: {x: 0, y: 0, z: 0}
+  map: {fileID: 5843172210697875951, guid: ddc572e3de85909469c15cb09ebb75fe, type: 3}
+  leftDoor: {x: 0, y: 12, z: 0}
+  rightDoor: {x: 24, y: 12, z: 0}
+  topDoor: {x: 12, y: 24, z: 0}
+  bottomDoor: {x: 12, y: 0, z: 0}
   left: {fileID: 2628112142682073514, guid: dd8327f81ecaf584d998881071897d6c, type: 3}
   right: {fileID: 5702591825414285098, guid: 5f6e3fb4c5eea9a44829de9ffd77cf8a, type: 3}
   top: {fileID: 1340712866875349406, guid: cf1af6ee8c2456944905a96836608010, type: 3}
   bottom: {fileID: 442942399839852457, guid: a93086e44e580ca4cb7c4f5122afdc94, type: 3}
   enemy: {fileID: 1699405025409994209, guid: 635f91da53a903544bd585ef3dc2ec9c, type: 3}
-  enemyPos: []
-  teleportPos: {x: 0, y: 0, z: 0}
-  doors: 0
+  enemyPos:
+  - {x: 11, y: 12, z: 0}
+  - {x: 12, y: 11, z: 0}
+  teleportPos: {x: 12, y: 4, z: 0}
+  doors: 2
+--- !u!61 &1705129549067718994
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446617484971337378}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 11.5, y: 11.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 21.5, y: 21.5}
+  m_EdgeRadius: 0

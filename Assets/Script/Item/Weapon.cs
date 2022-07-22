@@ -84,6 +84,7 @@ public class Weapon :item {
 		get{return type;}
 	}
 	public List<SpecialEffect> effects;
+	private Dictionary<DmgType,SpecialEffect> effectMap;
 	private int[,] materials;
 	private int[,] sharpedMatrix;
 	public int matrixSize;
@@ -102,6 +103,8 @@ public class Weapon :item {
 		sharpedMatrix = new int [size,size];
 		matrixSize	=	size;
 		foraged = false;
+		effects = new List<SpecialEffect>();
+		effectMap=new Dictionary<DmgType, SpecialEffect>();
 	}
 	public Weapon(WeaponSerializeHelpeer helper){
 		mass = helper.mass;
@@ -125,6 +128,26 @@ public class Weapon :item {
 		hardness += BackPack.Instance.materialTable[material].hardness - this[Mathf.FloorToInt(position.x),Mathf.FloorToInt(position.y)].hardness;
 		massCenter	=	(mass==0)?Vector2.zero:	massVector/mass;
 		materials[Mathf.FloorToInt(position.x),Mathf.FloorToInt(position.y)] = material;
+		if(effectMap.ContainsKey(BackPack.Instance.materialTable[material].effect.type)){
+			var temp=effectMap[BackPack.Instance.materialTable[material].effect.type];
+			temp.strength+=temp.strength/10;
+			effectMap[BackPack.Instance.materialTable[material].effect.type]=temp;
+		}
+		else{
+			var temp=BackPack.Instance.materialTable[material].effect;
+			temp.strength/=10;
+			effectMap[BackPack.Instance.materialTable[material].effect.type]=temp;
+		}
+		if(effectMap.ContainsKey(this[Mathf.FloorToInt(position.x),Mathf.FloorToInt(position.y)].effect.type)){
+			var temp=effectMap[this[Mathf.FloorToInt(position.x),Mathf.FloorToInt(position.y)].effect.type];
+			temp.strength-=temp.strength/10;
+			effectMap[this[Mathf.FloorToInt(position.x),Mathf.FloorToInt(position.y)].effect.type]=temp;
+		}
+		else{
+			var temp=BackPack.Instance.materialTable[material].effect;
+			temp.strength/=10;
+			effectMap[BackPack.Instance.materialTable[material].effect.type]=temp;
+		}
 		return new Tuple<float,Vector2>(mass,massCenter);
 	}
 	//update mass and matrix with id matrix
@@ -150,6 +173,10 @@ public class Weapon :item {
 				if(materialmatrix[i,j]==1)
 				onSharpMaterial(new Vector2(i,j));
 			}
+		}
+		foreach (var item in effectMap.ToList())
+		{
+			effects.Add(item.Value);
 		}
 		hardness /= materialCount;
 		setHandle(pos);
@@ -185,7 +212,7 @@ public class Weapon :item {
 			{
 				for (int j = 0; j < matrixSize; j++)
 				{
-					res.SetPixel( j,matrixSize-1-i,this[i,j].color);
+					res.SetPixel( i,matrixSize-1-j,this[i,j].color);
 				}
 			}
       res.Apply();

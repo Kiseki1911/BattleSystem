@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
 public class WeaponSerializeHelpeer{
@@ -11,6 +13,7 @@ public class WeaponSerializeHelpeer{
   public int matrixSize;
   public string matrix;
   public float durability;
+  public List<SpecialEffect> effects;
   public WeaponSerializeHelpeer(Weapon weapon){
     mass = weapon.mass;
     hardness = weapon.hardness;
@@ -22,5 +25,6 @@ public class WeaponSerializeHelpeer{
     matrixSize = weapon.matrixSize;
     matrix = weapon.matrix;
     durability =weapon.durability;
+    effects = weapon.effects;
   }
 }

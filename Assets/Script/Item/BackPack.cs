@@ -13,6 +13,7 @@ public class BackPack : MonoBehaviour
   public int maxMaterialVolumn = 18;
   private void Awake()
   {
+    if(Instance==null)
     Instance = this;
     weaponList = new();
 

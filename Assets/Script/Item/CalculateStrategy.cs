@@ -24,8 +24,8 @@ public class SwordCalculate : CalculateStrategy{
 		return dmg;
 	}
 	public float calculateAgile(Weapon weapon){
-		float agi=weapon.mass*0.5f;
-		agi/=(weapon.massCenter-weapon.handle).magnitude;
+		float agi=40f/(1+weapon.mass*0.5f);
+		agi/=(.5f+(weapon.massCenter-weapon.handle).magnitude);
 		agi*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)));
 		return agi;
 	}
@@ -38,7 +38,7 @@ public class JianCalculate : CalculateStrategy{
 		return dmg;
 	}
 	public float calculateAgile(Weapon weapon){
-		float agi=weapon.mass*0.5f;
+		float agi=40f/(1+weapon.mass*0.5f);
 		agi/=(.5f+(weapon.massCenter-weapon.handle).magnitude);
 		agi*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)));
 		return agi;

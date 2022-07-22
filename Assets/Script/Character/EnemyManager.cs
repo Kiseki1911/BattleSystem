@@ -20,8 +20,12 @@ public class EnemyManager : MonoBehaviour
     public Collider2D[] unitSees = new Collider2D[5];
     public bool isSeeingPlayer=false;
     public int seeRange=5;
-
-    public ParticleSystem deathEffect;
+    [SerializeField]private bool moving=true;
+    
+    private int fireTimer=0;
+    private int waterTimer=0;
+    private int windTimer=0;
+    private int poisonTimer=0;
     
     RaycastHit2D[] rayResults;
     // Start is called before the first frame update
@@ -36,7 +40,8 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position,targetPos,speed);
+        if(moving)
+            transform.position = Vector3.Lerp(transform.position,targetPos,speed);
         //fatigue.DecreaseFat(1);
     }
     public void Movement(Vector3 directionUnit){
@@ -86,10 +91,51 @@ public class EnemyManager : MonoBehaviour
     public void CharacterReset(){
         curHealth=maxHealth;
     }
-    public void TakeDamage(int dmg){
-        curHealth -= dmg;
+    public void TakeDamage(int dmg,List<SpecialEffect> effect=null){
+        curHealth -= ((int)(dmg*(1+0.1*waterTimer)));
         if(curHealth<=0){
             OnDeath();
+        }
+        foreach (var item in effect)
+        {
+            switch (item.type)
+            {
+                case DmgType.FIRE:
+                    if(fireTimer<=0){
+                        fireTimer=item.strength;
+                        StartCoroutine(onfire());
+                    }
+                    else{
+                        fireTimer+=item.strength;
+                    }
+                    break;
+                case DmgType.WATER:
+                    if(waterTimer<=0){
+                        waterTimer=item.strength;
+                        StartCoroutine(onWind());
+                    }
+                    else{
+                        windTimer+=item.strength;
+                    }
+                    break;
+                case DmgType.WIND:
+                    if(windTimer<=0){
+                        windTimer=item.strength;
+                        StartCoroutine(onWind());
+                    }
+                    else{
+                        windTimer+=item.strength;
+                    }
+                    break;
+                case DmgType.POISON:if(poisonTimer<=0){
+                        poisonTimer=item.strength;
+                        StartCoroutine(onPoison());
+                    }
+                    else{
+                        poisonTimer+=item.strength;
+                    }
+                    break;
+            }
         }
     }
     private void OnDeath(){
@@ -105,9 +151,6 @@ public class EnemyManager : MonoBehaviour
     void DropItem(){
 
     }
-
-
-
 
     private void OnTriggerEnter2D(Collider2D other) {
         Debug.Log("coli something");
@@ -135,5 +178,45 @@ public class EnemyManager : MonoBehaviour
             }
         }
         return false;
+    }
+    IEnumerator  onfire(){
+        while (fireTimer>0)
+        {
+            curHealth -= ((int)((float)maxHealth*0.05f));
+            if(curHealth<=0){
+                OnDeath();
+                break;
+            }
+            fireTimer--;
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    IEnumerator  onPoison(){
+        while (poisonTimer>0)
+        {
+            curHealth -= 3*poisonTimer;
+            if(curHealth<=0){
+                OnDeath();
+                break;
+            }
+            poisonTimer--;
+            yield return new WaitForSeconds(1f);
+        }
+    }
+    IEnumerable onWater(){
+        while (waterTimer>0)
+        {
+            waterTimer--;
+            yield return new WaitForSeconds(1);
+        }
+    }
+    IEnumerator  onWind(){
+        moving=false;
+        while (windTimer>0)
+        {
+            windTimer--;
+            yield return new WaitForSeconds(1);
+        }
+        moving=true;
     }
 }
