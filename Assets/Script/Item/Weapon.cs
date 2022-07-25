@@ -15,7 +15,7 @@ public enum WeaponType
 }
 //Weapon class
 [System.Serializable]
-public class Weapon :item {
+public class Weapon :ScriptableItem {
 	public float mass;
 	public float hardness;
 	private float _damageRate=-1;
