@@ -11,6 +11,7 @@ public class WeaponInstance : MonoBehaviour
     public int currentWeapon=0;
 
     static public WeaponInstance instance;
+    public GameObject massCenter;
     private void OnEnable() {
         if(instance==null)
         instance=this;
@@ -22,16 +23,17 @@ public class WeaponInstance : MonoBehaviour
         transform.rotation=Quaternion.identity;
         weapon = BackPack.Instance.weaponList[currentWeapon];
         //transform.localPosition=weapon.handle/36;
-        oldPos=transform.position;
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y,36-weapon.handle.x)/36f,32);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y+.5f,36-weapon.handle.x+.5f)/36f,32);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
+        massCenter.transform.localPosition=(weapon.massCenter-new Vector2(weapon.handle.y,36-weapon.handle.x))/36;
+        oldPos=massCenter.transform.position/36;
     }
 
     // Update is called once per frame
     protected void FixedUpdate()
     {
-        speed=(transform.position-oldPos).magnitude;
-        oldPos=transform.position;
+        speed=(massCenter.transform.position-oldPos).magnitude;
+        oldPos=massCenter.transform.position;
     }
     protected void OnTriggerEnter2D(Collider2D other) {
         
@@ -49,7 +51,9 @@ public class WeaponInstance : MonoBehaviour
         currentWeapon=i;
         weapon = BackPack.Instance.weaponList[currentWeapon];
         Destroy(GetComponent<PolygonCollider2D>());
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y,36-weapon.handle.x)/36f,32);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y+.5f,36-weapon.handle.x+.5f)/36f,32);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
+        massCenter.transform.localPosition=(weapon.massCenter-new Vector2(weapon.handle.y,36-weapon.handle.x))/36;
+        oldPos=massCenter.transform.position/36;
     }
 }

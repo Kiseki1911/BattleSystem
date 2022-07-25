@@ -16,7 +16,7 @@ public class Projectile : WeaponInstance
         StartCoroutine(SelfReturn(10));
         currentWeapon= WeaponInstance.instance.currentWeapon; 
         weapon = BackPack.Instance.weaponList[currentWeapon];
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),weapon.handle/72f,32);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y+.5f,36-weapon.handle.x+.5f)/36f,32);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
     }
 

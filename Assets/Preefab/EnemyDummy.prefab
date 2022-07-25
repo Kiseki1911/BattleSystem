@@ -209,19 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb5616fac4d7804eb690b8219ec4719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon:
-    title: 
-    price: 0
-    mass: 0
-    hardness: 0
-    durability: 0
-    massCenter: {x: 0, y: 0}
-    handle: {x: 0, y: 0}
-    diraction: {x: 0, y: 0}
-    type: 0
-    effects: []
-    matrixSize: 0
+  weapon: {fileID: 0}
   currentWeapon: 0
+  massCenter: {fileID: 0}
 --- !u!1 &1699405025156567910
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,16 +223,16 @@ GameObject:
   - component: {fileID: 1699405025156567194}
   - component: {fileID: 1699405025156567195}
   - component: {fileID: 1699405025156567909}
-  - component: {fileID: 1699405025156567908}
   - component: {fileID: 1699405025156567193}
   - component: {fileID: 3724071561864185160}
+  - component: {fileID: 6111998580664305925}
   m_Layer: 0
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1699405025156567194
 Transform:
   m_ObjectHideFlags: 0
@@ -331,32 +321,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 7
---- !u!61 &1699405025156567908
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1699405025156567910}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.7, y: 0.7}
-  m_EdgeRadius: 0
 --- !u!114 &1699405025156567193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +353,46 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!60 &6111998580664305925
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699405025156567910}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.13994932, y: 0.29036853}
+      - {x: -0.26105738, y: 0.17990845}
+      - {x: -0.31851697, y: 0.15205242}
+      - {x: -0.34149337, y: -0.026834622}
+      - {x: -0.33213615, y: -0.12840483}
+      - {x: -0.2678914, y: -0.18828835}
+      - {x: -0.25121284, y: -0.20233223}
+      - {x: -0.2067411, y: -0.21917751}
+      - {x: 0.2647345, y: -0.21898167}
+      - {x: 0.28015423, y: -0.19722502}
+      - {x: 0.30182576, y: -0.17673078}
+      - {x: 0.33383846, y: -0.14913711}
+      - {x: 0.33335137, y: 0.011602908}
+      - {x: 0.31000495, y: 0.17588632}
+      - {x: 0.14706206, y: 0.29207098}
 --- !u!1 &1699405025368734564
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,7 +576,6 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
