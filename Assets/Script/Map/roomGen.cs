@@ -17,11 +17,14 @@ public class roomGen: MonoBehaviour
     public GameObject enemy;
     public Vector3Int[] enemyPos;
     public Vector3Int teleportPos;
+    public bool preset;
     [Range(0,15)]
-    [SerializeField] public uint doors=0;
+    public uint doors=0;
     private int deathCount=0;
-    private List<GameObject> realDoors=new List<GameObject>();
+    [SerializeField] private List<GameObject> realDoors=new List<GameObject>();
     private void Awake() {
+        if(preset)
+            return;
         if((doors&1)==1){
             realDoors.Add(Instantiate(left,leftDoor+transform.position,Quaternion.identity,transform.parent));
 		}
@@ -52,7 +55,8 @@ public class roomGen: MonoBehaviour
         if(other.tag=="Player"){
             for (int i = 0; i < transform.childCount; i++)
             {
-                transform.GetChild(i).gameObject.SetActive(true);
+                if(transform.GetChild(i).tag=="Enemy")
+                    transform.GetChild(i).gameObject.SetActive(true);
             }
             foreach (var item in realDoors)
             {

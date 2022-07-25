@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 public class Interactive : MonoBehaviour
 {
     private bool isNear=false;
-    [SerializeField] protected BoxCollider2D trigger;
+    [SerializeField] protected Collider2D trigger;
     //GameObject player;
     // Start is called before the first frame update
     void Start()
