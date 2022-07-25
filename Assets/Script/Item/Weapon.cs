@@ -119,6 +119,7 @@ public class Weapon :item {
 		sharpedMatrix = new int [matrixSize,matrixSize];
 		matrix=helper.matrix;
     durability = helper.durability;
+		effects=helper.effects;
 	}
 	//live update for mass and material matrix
 	public Tuple<float,Vector2> onChangeMaterial(Vector2 position,int material){

@@ -184,8 +184,8 @@ MonoBehaviour:
   m_text: "\u76EE\u524D\u6E38\u620F\u8FD8\u5728\u65E9\u671F\u9636\u6BB5. [I]\u952E\u6253\u5F00\u5173\u95ED\u80CC\u5305,
     [esc]\u952E\u6253\u5F00\u8BBE\u7F6E\u83DC\u5355."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
-  m_sharedMaterial: {fileID: -1661308575514177766, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
+  m_sharedMaterial: {fileID: 8049461117065367148, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1819,11 +1819,15 @@ PrefabInstance:
     - target: {fileID: 3395892609904729625, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+      objectReference: {fileID: 11400000, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
     - target: {fileID: 3395892609904729625, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -1661308575514177766, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+    - target: {fileID: 3395892609904729625, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4161770711119365051, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1911,11 +1915,15 @@ PrefabInstance:
     - target: {fileID: 7155750794508203963, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+      objectReference: {fileID: 11400000, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
     - target: {fileID: 7155750794508203963, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -1661308575514177766, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+    - target: {fileID: 7155750794508203963, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7237224337273476766, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: textSpeed
       value: 0.1
@@ -1939,11 +1947,11 @@ PrefabInstance:
     - target: {fileID: 7944140788051405794, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+      objectReference: {fileID: 11400000, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
     - target: {fileID: 7944140788051405794, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: -1661308575514177766, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+      objectReference: {fileID: 8049461117065367148, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
     - target: {fileID: 8336117076587303007, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.21899414
@@ -2536,7 +2544,6 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
@@ -3336,7 +3343,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -3421,7 +3427,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7777778, y: 1}
+    m_SensorSize: {x: 1.925, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4406,7 +4412,6 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
@@ -4553,8 +4558,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u6309\u4E0B\u7A7A\u683C\u7EE7\u7EED"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
-  m_sharedMaterial: {fileID: -1661308575514177766, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
+  m_sharedMaterial: {fileID: 8049461117065367148, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4698,7 +4703,7 @@ MonoBehaviour:
     Kiseki1911, toyotomi830, ChZhHA\nB\u7AD9\u94FE\u63A5: https://space.bilibili.com/7730660
     \u58F9\u62FE\u8086Channel"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5e4aa26a8d854c947be99d1e383957c5, type: 2}
   m_sharedMaterial: {fileID: -1661308575514177766, guid: b0dbc681fcbcdf4499a53eb264e4cf43, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4762,7 +4767,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2144763750
