@@ -25,6 +25,9 @@ public class Fatigue:MonoBehaviour
 
     public void IncreaseFat(int value){
         fat+=value*increaseRate;
+        if(fat>=220){
+            fat=220;
+        }
     }
 
     public void DecreaseFat(int value){

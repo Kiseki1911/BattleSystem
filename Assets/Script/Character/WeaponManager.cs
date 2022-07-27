@@ -9,6 +9,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject weaponInHand;
     public GameObject boneReference;
     public GameObject cursor;
+    public GameObject followPoint;
 
 
     public bool onHit;
@@ -46,6 +47,8 @@ public class WeaponManager : MonoBehaviour
         weaponInHand.transform.eulerAngles = boneReference.transform.eulerAngles+Vector3.back*90;
         if(!onHit){
             cursor.transform.position = Vector3.Lerp(cursor.transform.position,Camera.main.ScreenToWorldPoint(Input.mousePosition),swingDelay);
+            //followPoint.GetComponent<Rigidbody2D>().AddForce(1000f*swingDelay*((Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition)-followPoint.GetComponent<Rigidbody2D>().position));
+            //cursor.transform.position = followPoint.GetComponent<Rigidbody2D>().position;
         }
         
     }  

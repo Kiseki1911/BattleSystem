@@ -31,7 +31,8 @@ public class CharacterActions : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position,targetPos,WeaponManager.Instance.moveDelay);
+        //transform.position = Vector3.Lerp(transform.position,targetPos,WeaponManager.Instance.moveDelay);
+        GetComponent<Rigidbody2D>().velocity = GetComponent<PlayerManager>().dirUnit;
         fatigue.DecreaseFat(2);
         if(HP_UI != null)
         {
@@ -49,14 +50,13 @@ public class CharacterActions : MonoBehaviour
         }
        
         Debug.DrawRay(transform.position, directionUnit, Color.green);
-        if((targetPos-transform.position).magnitude<0.05){
+        //if((targetPos-transform.position).magnitude<0.05){
             targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
             if(fatigue.fat>=200){
                 TakeDamage(2);
             }
-            fatigue.IncreaseFat(30);
-        }
-        
+            //fatigue.IncreaseFat(20);
+        //}
     }
     public void RoundAttack(){
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     public int mouseRightSkill = 2;
     public static bool isControlling = false;
     private CharacterActions me;
+    public Vector2 dirUnit;
     void Start()
     {
         me = gameObject.GetComponent<CharacterActions>();
@@ -29,7 +30,9 @@ public class PlayerManager : MonoBehaviour
     private void PlayerInput(){
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
+        dirUnit =  new Vector2(inputX,inputY);
         if(inputX!=0||inputY!=0){
+            
             me.Movement(new Vector3(Mathf.RoundToInt(inputX),Mathf.RoundToInt(inputY),0));
             me.anim.SetBool("Moving",true);
             if(inputX!=0){
