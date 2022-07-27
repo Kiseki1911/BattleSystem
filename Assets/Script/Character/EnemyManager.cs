@@ -22,6 +22,8 @@ public class EnemyManager : MonoBehaviour
     public bool isSeeingPlayer=false;
     public int seeRange=5;
     [SerializeField]private bool moving=true;
+    public Vector3 curSpeed;
+    private Vector3 oldPos;
     
     private int fireTimer=0;
     private int waterTimer=0;
@@ -32,7 +34,7 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        oldPos=transform.position;
         CharacterReset();
         targetPos = transform.position;
         //fatigue = Fatigue.Instance;
@@ -44,6 +46,8 @@ public class EnemyManager : MonoBehaviour
         if(moving)
             transform.position = Vector3.Lerp(transform.position,targetPos,speed);
         //fatigue.DecreaseFat(1);
+        curSpeed=transform.position-oldPos;
+        oldPos=transform.position;
     }
     public void Movement(Vector3 directionUnit){
         rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1f);

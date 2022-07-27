@@ -11,10 +11,12 @@ public class PlayerManager : MonoBehaviour
 
     public int mouseLeftSkill = 1;
     public int mouseRightSkill = 2;
+    static public PlayerManager instance;
     public static bool isControlling = false;
     private CharacterActions me;
     void Start()
     {
+        instance=this;
         me = gameObject.GetComponent<CharacterActions>();
     }
 
