@@ -56,7 +56,7 @@ public class WeaponManager : MonoBehaviour
         if(!onHit){
             //cursor.transform.position = Vector3.Lerp(cursor.transform.position,realCursor,swingDelay);
             //Debug.Log(realCursor);
-            Debug.Log(t);
+            //Debug.Log(t);
             if(Vector2.Distance(target.position,realCursor)<=(target.velocity.magnitude/(400*swingDelay))){
                 if(t>0){
                     t-=4f*swingDelay;
@@ -75,7 +75,7 @@ public class WeaponManager : MonoBehaviour
             }
         }
         
-    }  
+    }
 
     public IEnumerator OnHit(Vector2 colliPoint){
         yield return new WaitForSeconds(0.2f);
@@ -84,6 +84,7 @@ public class WeaponManager : MonoBehaviour
     }
 
     public void changeWeapon(Weapon newWeapon){
-
+        target.velocity=Vector2.zero;
+        t=0;
     }
 }

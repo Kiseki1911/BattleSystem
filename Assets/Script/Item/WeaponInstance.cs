@@ -57,7 +57,7 @@ public class WeaponInstance : MonoBehaviour
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
         massCenter.transform.localPosition=(weapon.massCenter-new Vector2(weapon.handle.y,36-weapon.handle.x))/36;
         oldPos=massCenter.transform.position/36;
-        
         Debug.Log(weapon.ToString());
+        WeaponManager.Instance.changeWeapon(weapon);
     }
 }
