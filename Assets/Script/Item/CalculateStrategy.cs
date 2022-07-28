@@ -19,16 +19,16 @@ public interface CalculateStrategy{
 public class SwordCalculate : CalculateStrategy{
 	public float calculateDamage(Weapon weapon){
 		if(weapon.sharped){
-			float dmg=weapon.mass*0.5f;
+			float dmg=weapon.mass*0.4f;
 			dmg*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
-			dmg*=weapon.hardness/5f;
+			dmg*=weapon.hardness/4f;
 			return dmg;
 		}
 		else
 		{
 			float dmg=weapon.mass*0.2f;
 			dmg*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
-			dmg*=weapon.hardness/8f;
+			dmg*=weapon.hardness/6f;
 			return dmg;
 		}
 	}

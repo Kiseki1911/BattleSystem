@@ -770,8 +770,8 @@ TextureImporter:
       name: wall_total_31
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 160
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -791,8 +791,8 @@ TextureImporter:
       name: wall_total_32
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 192
+        y: 128
         width: 32
         height: 32
       alignment: 0
@@ -813,7 +813,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -833,8 +833,8 @@ TextureImporter:
       name: wall_total_34
       rect:
         serializedVersion: 2
-        x: 32
-        y: 64
+        x: 64
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -854,8 +854,8 @@ TextureImporter:
       name: wall_total_35
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 160
+        y: 96
         width: 32
         height: 32
       alignment: 0
@@ -867,6 +867,90 @@ TextureImporter:
       bones: []
       spriteID: 423fcec8906609346a3db2aeffeb3c81
       internalID: -839112724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_total_36
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76d3b826da29fcb49bda6fcbfec1963b
+      internalID: 739560212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_total_37
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8080e8f4675b2ce4781a40ef96c69e4c
+      internalID: -430145564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_total_38
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28bb10f3ae64e884389027a14cf9b173
+      internalID: -600723757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_total_39
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27a4d828dd5510d408bff880088f5429
+      internalID: -666166481
       vertices: []
       indices: 
       edges: []
@@ -887,6 +971,7 @@ TextureImporter:
       wall_total_16: 37492407
       wall_total_32: -50133262
       wall_total_4: 1573046505
+      wall_total_38: -600723757
       wall_total_22: 1081688076
       wall_total_26: 1292902209
       wall_total_2: -1959204893
@@ -894,8 +979,10 @@ TextureImporter:
       wall_total_9: -1657388849
       wall_total_11: -1000582670
       wall_total_24: -174291520
+      wall_total_39: -666166481
       wall_total_33: 652839690
       wall_total_6: 1111360225
+      wall_total_37: -430145564
       wall_total_15: 2069885240
       wall_total_17: -1677278152
       wall_total_34: -1093759729
@@ -917,6 +1004,7 @@ TextureImporter:
       wall_total_28: -1281876342
       wall_total_20: 249565430
       wall_total_10: 1674899295
+      wall_total_36: 739560212
       wall_total_21: 17851060
   spritePackingTag: 
   pSDRemoveMatte: 0
