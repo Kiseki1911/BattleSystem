@@ -11,11 +11,14 @@ public class PlayerManager : MonoBehaviour
 
     public int mouseLeftSkill = 1;
     public int mouseRightSkill = 2;
+    static public PlayerManager instance;
     public static bool isControlling = false;
     private CharacterActions me;
     public Vector2 dirUnit;
+    public bool isRunning;
     void Start()
     {
+        instance=this;
         me = gameObject.GetComponent<CharacterActions>();
     }
 
@@ -31,14 +34,16 @@ public class PlayerManager : MonoBehaviour
         inputX = Input.GetAxisRaw("Horizontal");
         inputY = Input.GetAxisRaw("Vertical");
         dirUnit =  new Vector2(inputX,inputY);
+        isRunning=Input.GetKey(KeyCode.LeftShift);
         if(inputX!=0||inputY!=0){
             
-            me.Movement(new Vector3(Mathf.RoundToInt(inputX),Mathf.RoundToInt(inputY),0));
+            //me.FreeMovement(dirUnit);
             me.anim.SetBool("Moving",true);
             if(inputX!=0){
                 me.transform.GetChild(0).transform.localScale=new Vector3(-Mathf.RoundToInt(inputX),1,1);
             }
         }
+        
         else{
             me.anim.SetBool("Moving",false);
         }
