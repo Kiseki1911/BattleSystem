@@ -526,6 +526,7 @@ MonoBehaviour:
   attackDamange: 20
   isRoundAttack: 0
   deathEffect: {fileID: 407439392378138301, guid: f3f07c3807a8f19488e55687ec59496f, type: 3}
+  dmgDisplay: {fileID: 640428020596423152, guid: 7d808dd12c888c14c88757ff6b8e602e, type: 3}
   unitSees:
   - {fileID: 0}
   - {fileID: 0}
@@ -535,6 +536,7 @@ MonoBehaviour:
   isSeeingPlayer: 0
   seeRange: 5
   moving: 1
+  curSpeed: {x: 0, y: 0, z: 0}
 --- !u!114 &1699405025409994213
 MonoBehaviour:
   m_ObjectHideFlags: 0

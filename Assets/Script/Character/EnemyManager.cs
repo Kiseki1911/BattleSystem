@@ -18,10 +18,14 @@ public class EnemyManager : MonoBehaviour
     public bool isRoundAttack;
     public ParticleSystem deathEffect;
 
+    public GameObject dmgDisplay;
+
     public Collider2D[] unitSees = new Collider2D[5];
     public bool isSeeingPlayer=false;
     public int seeRange=5;
     [SerializeField]private bool moving=true;
+    public Vector3 curSpeed;
+    private Vector3 oldPos;
     
     private int fireTimer=0;
     private int waterTimer=0;
@@ -32,7 +36,7 @@ public class EnemyManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        oldPos=transform.position;
         CharacterReset();
         targetPos = transform.position;
         //fatigue = Fatigue.Instance;
@@ -44,6 +48,8 @@ public class EnemyManager : MonoBehaviour
         if(moving)
             transform.position = Vector3.Lerp(transform.position,targetPos,speed);
         //fatigue.DecreaseFat(1);
+        curSpeed=transform.position-oldPos;
+        oldPos=transform.position;
     }
     public void Movement(Vector3 directionUnit){
         rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1f);
@@ -93,9 +99,15 @@ public class EnemyManager : MonoBehaviour
         curHealth=maxHealth;
     }
     public void TakeDamage(int dmg,List<SpecialEffect> effect=null){
-        curHealth -= ((int)(dmg*(1+0.1*waterTimer)));
+        int calcDmg = (int)(dmg*(1+0.1*waterTimer));
+        curHealth -= calcDmg;
+        dmgDisplay.GetComponent<DamageDisplay>().Damage(calcDmg);
+        Instantiate(dmgDisplay,transform.position,Quaternion.identity);
+        
+        
         if(curHealth<=0){
             OnDeath();
+            return;
         }
         foreach (var item in effect)
         {
