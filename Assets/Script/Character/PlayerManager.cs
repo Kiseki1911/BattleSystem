@@ -35,6 +35,7 @@ public class PlayerManager : MonoBehaviour
         inputY = Input.GetAxisRaw("Vertical");
         dirUnit =  new Vector2(inputX,inputY);
         isRunning=Input.GetKey(KeyCode.LeftShift);
+        me.anim.SetBool("Running",isRunning);
         if(inputX!=0||inputY!=0){
             
             //me.FreeMovement(dirUnit);
