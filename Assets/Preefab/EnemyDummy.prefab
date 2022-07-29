@@ -209,19 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abb5616fac4d7804eb690b8219ec4719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon:
-    title: 
-    price: 0
-    mass: 0
-    hardness: 0
-    durability: 0
-    massCenter: {x: 0, y: 0}
-    handle: {x: 0, y: 0}
-    diraction: {x: 0, y: 0}
-    type: 0
-    effects: []
-    matrixSize: 0
+  weapon: {fileID: 0}
   currentWeapon: 0
+  massCenter: {fileID: 0}
 --- !u!1 &1699405025156567910
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,6 +515,10 @@ MonoBehaviour:
   maxHealth: 100
   attackDamange: 20
   isRoundAttack: 0
+  drop:
+  - {fileID: 11400000, guid: f92e38599c2199e468e4b2171e7496df, type: 2}
+  - {fileID: 11400000, guid: 8ac45ead17cfab94dbcd07391a201d8c, type: 2}
+  materialCube: {fileID: 4500889622085245882, guid: b09d2af1ba31d774ea4c4bf56121feea, type: 3}
   deathEffect: {fileID: 407439392378138301, guid: f3f07c3807a8f19488e55687ec59496f, type: 3}
   dmgDisplay: {fileID: 640428020596423152, guid: 7d808dd12c888c14c88757ff6b8e602e, type: 3}
   unitSees:
@@ -574,7 +568,6 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2

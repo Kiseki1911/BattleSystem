@@ -161,7 +161,7 @@ public class EnemyManager : MonoBehaviour
         }
         gameObject.SetActive(false);
         
-        transform.parent.GetComponent<roomGen>().onEnemyDeath();
+        //transform.parent.GetComponent<roomGen>().onEnemyDeath();
     }
 
     void DropItem(){

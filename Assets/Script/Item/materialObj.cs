@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering.Universal; 
 using UnityEngine;
 
 public class materialObj : MonoBehaviour
@@ -7,6 +8,7 @@ public class materialObj : MonoBehaviour
     public Material material;
     SpriteRenderer myRenderer;
     Collider2D myCollider;
+    public GameObject display;
     // Start is called before the first frame update
     void Awake()
     {
@@ -18,6 +20,7 @@ public class materialObj : MonoBehaviour
     public void setMaterial(Material material){
         this.material=material;
         myRenderer.color=this.material.color;
+        transform.GetChild(0).GetComponent<Light2D>().color=this.material.color;
     }
 
     // Update is called once per frame
@@ -26,6 +29,8 @@ public class materialObj : MonoBehaviour
         if(other.tag=="Player"){
             myCollider.enabled=false;
             BackPack.Instance.materials.Add(material);
+            display.GetComponent<MaterialDisplay>().pick(material.title,1);
+            Instantiate(display,transform.position,Quaternion.identity);
             Destroy(gameObject,0.05f);
         }
     }

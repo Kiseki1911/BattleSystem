@@ -519,6 +519,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40
       objectReference: {fileID: 0}
+    - target: {fileID: 2654815667406224839, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2001547448}
+    - target: {fileID: 2654815667406224839, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
+      propertyPath: forgeUi
+      value: 
+      objectReference: {fileID: 1383795237}
+    - target: {fileID: 2654815667406224839, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1005057241}
     - target: {fileID: 2661539280937563447, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
       propertyPath: m_LocalScale.x
       value: 2
@@ -1477,11 +1489,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &653916539 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1012845444388971927, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
-  m_PrefabInstance: {fileID: 655212777431795035}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &679056618 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4600147521009362167, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
@@ -1563,7 +1570,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &748291443
@@ -2120,6 +2127,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: 0}
   speed: 0.5
   weapon: {fileID: 17838644}
+  arm: {fileID: 0}
   weaponRotation_z: 0
   rotation_z: 0
   curHealth: 0
@@ -2160,6 +2168,8 @@ MonoBehaviour:
   inputY: 0
   mouseLeftSkill: 1
   mouseRightSkill: 2
+  dirUnit: {x: 0, y: 0}
+  isRunning: 0
 --- !u!1 &1005057241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2838,6 +2848,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8336117078089770180, guid: 932425747392edc45a690c16bdd2a8cb, type: 3}
   m_PrefabInstance: {fileID: 292520336}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1359336605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6501114938466049508, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
+  m_PrefabInstance: {fileID: 655212777431795035}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1383795237 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2004609564202595867, guid: 6d6d2793e94845747bb42ebffd0bb58d, type: 3}
@@ -2886,6 +2901,7 @@ MonoBehaviour:
   weaponInHand: {fileID: 1638352466}
   boneReference: {fileID: 427101127}
   cursor: {fileID: 1238087918}
+  followPoint: {fileID: 0}
   onHit: 0
   onHitEffect: {fileID: 1775836374320171827, guid: cade3eeff89f1174e9446fe67051892f, type: 3}
   mass: 0
@@ -3285,6 +3301,7 @@ GameObject:
   - component: {fileID: 2001547450}
   - component: {fileID: 2001547449}
   - component: {fileID: 2001547452}
+  - component: {fileID: 2001547453}
   m_Layer: 0
   m_Name: 2DIKPlayer
   m_TagString: Player
@@ -3308,6 +3325,8 @@ MonoBehaviour:
   inputY: 0
   mouseLeftSkill: 1
   mouseRightSkill: 2
+  dirUnit: {x: 0, y: 0}
+  isRunning: 0
 --- !u!114 &2001547450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3324,6 +3343,7 @@ MonoBehaviour:
   targetPos: {x: 0, y: 0, z: -1}
   speed: 0.5
   weapon: {fileID: 1638352466}
+  arm: {fileID: 427101127}
   weaponRotation_z: 0
   rotation_z: 0
   curHealth: 0
@@ -3426,6 +3446,27 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!50 &2001547453
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001547448}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2004027432
 GameObject:
   m_ObjectHideFlags: 0
@@ -3828,7 +3869,7 @@ PrefabInstance:
     - target: {fileID: 655212777962062604, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
       propertyPath: massCenter
       value: 
-      objectReference: {fileID: 653916539}
+      objectReference: {fileID: 1359336605}
     - target: {fileID: 655212777962062605, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -3859,6 +3900,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 655212777962062605, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
+    - {fileID: 811613415332107904, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
 --- !u!1001 &1699405023954426523
 PrefabInstance:
