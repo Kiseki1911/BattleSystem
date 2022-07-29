@@ -31,12 +31,12 @@ public class MaterialList : ScriptableObject {
       materialList.Add(material);
       BackPack.SaveChange();
     }
-    public void Add(Material material){
+    public void Add(Material material, int num){
       bool find=false;
       foreach (var item in materialList)
       {
         if(item.material.id==material.id){
-          item.count++;
+          item.count+= num;
           find=true;
         }
       }

@@ -59,6 +59,8 @@ public class FollowDialogControl : MonoBehaviour
         }
     }
     public void GetText(string[] lines){
+        PlayerManager.isControlling=false;
+        Time.timeScale=0;
         textList.Clear();
         index = 0;
         for(int i =0; i <lines.Length;i++){

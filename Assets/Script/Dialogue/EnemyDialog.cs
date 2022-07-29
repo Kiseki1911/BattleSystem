@@ -16,6 +16,6 @@ public class EnemyDialog : MonoBehaviour
 
     public void sendDialog(){
         dialog.GetText(strList);
-        dialog.gameObject.SetActive(true);
+        //dialog.gameObject.SetActive(true);
     }
 }
