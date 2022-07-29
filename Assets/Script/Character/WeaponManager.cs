@@ -9,6 +9,7 @@ public class WeaponManager : MonoBehaviour
     public GameObject weaponInHand;
     public GameObject boneReference;
     public GameObject cursor;
+    public GameObject followPoint;
 
 
     public bool onHit;

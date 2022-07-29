@@ -8,8 +8,9 @@ public class CharacterActions : MonoBehaviour
     private Fatigue fatigue;
     public Image HP_UI;
     public Vector3 targetPos;
-    public float speed = 0.5f;
+    public float speed = 5f;
     public GameObject weapon;
+    public GameObject arm;
     public float weaponRotation_z;
     public float rotation_z;
     public int curHealth;
@@ -31,13 +32,32 @@ public class CharacterActions : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position,targetPos,WeaponManager.Instance.moveDelay);
+        float modif = Mathf.Sqrt(WeaponManager.Instance.moveDelay);
+        arm.transform.localPosition =new Vector3(-0.021f,-0.46f,-1f);
+        //transform.position = Vector3.Lerp(transform.position,targetPos,WeaponManager.Instance.moveDelay);
+        GetComponent<Rigidbody2D>().velocity = speed*modif*GetComponent<PlayerManager>().dirUnit;
+        if(GetComponent<PlayerManager>().isRunning){
+            speed = 6f/modif;
+            fatigue.IncreaseFat(Mathf.FloorToInt(speed/2));
+        }
+        else{
+            speed = 2f;
+        }
         fatigue.DecreaseFat(2);
+        if(fatigue.fat>=210){
+            TakeDamage(1);
+        }
         if(HP_UI != null)
         {
           HP_UI.fillAmount = (float)curHealth / (float)maxHealth;
         }
     }
+    /*
+    public  void FreeMovement(Vector3 directionUnit){
+        GetComponent<Rigidbody2D>().velocity = 5*directionUnit*WeaponManager.Instance.moveDelay;
+    }
+    */
+
     public void Movement(Vector3 directionUnit){
         rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1f);
         for(int i=0; i <rayResults.Length;i++){
@@ -51,12 +71,8 @@ public class CharacterActions : MonoBehaviour
         Debug.DrawRay(transform.position, directionUnit, Color.green);
         if((targetPos-transform.position).magnitude<0.05){
             targetPos =Vector3Int.RoundToInt(transform.position)+directionUnit;
-            if(fatigue.fat>=200){
-                TakeDamage(2);
-            }
-            fatigue.IncreaseFat(30);
+            //fatigue.IncreaseFat(20);
         }
-        
     }
     public void RoundAttack(){
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;

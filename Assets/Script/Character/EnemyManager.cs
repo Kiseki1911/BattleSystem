@@ -20,6 +20,8 @@ public class EnemyManager : MonoBehaviour
     public GameObject materialCube;
     public ParticleSystem deathEffect;
 
+    public GameObject dmgDisplay;
+
     public Collider2D[] unitSees = new Collider2D[5];
     public bool isSeeingPlayer=false;
     public int seeRange=5;
@@ -99,9 +101,15 @@ public class EnemyManager : MonoBehaviour
         curHealth=maxHealth;
     }
     public void TakeDamage(int dmg,List<SpecialEffect> effect=null){
-        curHealth -= ((int)(dmg*(1+0.1*waterTimer)));
+        int calcDmg = (int)(dmg*(1+0.1*waterTimer));
+        curHealth -= calcDmg;
+        dmgDisplay.GetComponent<DamageDisplay>().Damage(calcDmg);
+        Instantiate(dmgDisplay,transform.position,Quaternion.identity);
+        
+        
         if(curHealth<=0){
             OnDeath();
+            return;
         }
         foreach (var item in effect)
         {
@@ -151,18 +159,18 @@ public class EnemyManager : MonoBehaviour
         if(transform.GetComponentInChildren<Projectile>()!=null){
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);
         }
-        transform.parent.GetComponent<roomGen>().onEnemyDeath();
         gameObject.SetActive(false);
-        foreach (var item in drop)
-        {
-            Debug.Log(item.name);
-            var cube=Instantiate(materialCube,transform.position+(Vector3)Random.insideUnitCircle,Quaternion.identity);
-            cube.GetComponent<materialObj>().setMaterial(item);
-        }
+        
+        transform.parent.GetComponent<roomGen>().onEnemyDeath();
     }
 
     void DropItem(){
-
+        foreach (var item in drop)
+            {
+                Debug.Log(item.name);
+                var cube=Instantiate(materialCube,transform.position+(Vector3)Random.insideUnitCircle,Quaternion.identity);
+                cube.GetComponent<materialObj>().setMaterial(item);
+            }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

@@ -51,11 +51,19 @@ public class Projectile : WeaponInstance
     }
 
     protected void OnTriggerEnter2D(Collider2D other) {
-        if(other.tag =="Enemy"||other.tag == "Wall"){
+        if(other.tag =="Enemy"){
             gameObject.transform.SetParent(other.transform);
 
             onReturn=false;
             onHit= true;
+        }
+        else if(other.tag == "Wall"){
+            if(!onReturn){
+                gameObject.transform.SetParent(other.transform);
+
+                onReturn=false;
+                onHit= true;
+            }
         }
         else if(other.tag=="Player"){
             if(onReturn ||gameObject.transform.parent!=null){

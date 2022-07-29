@@ -12,7 +12,7 @@ public class Fatigue:MonoBehaviour
 
     public Image SP_UI;
 
-    private void Start() {
+    private void Awake() {
         Instance = this;
     }
 
@@ -25,6 +25,9 @@ public class Fatigue:MonoBehaviour
 
     public void IncreaseFat(int value){
         fat+=value*increaseRate;
+        if(fat>=220){
+            fat=220;
+        }
     }
 
     public void DecreaseFat(int value){
