@@ -75,5 +75,8 @@ public class FollowDialogControl : MonoBehaviour
 
     public void SkipButton(){
         followCanvas.SetActive(false);
+        PlayerManager.isControlling=true;
+        Time.timeScale=1;
+        index=0;
     }
 }
