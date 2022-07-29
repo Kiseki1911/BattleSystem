@@ -31,7 +31,20 @@ public class MaterialList : ScriptableObject {
       materialList.Add(material);
       BackPack.SaveChange();
     }
-
+    public void Add(Material material){
+      bool find=false;
+      foreach (var item in materialList)
+      {
+        if(item.material.id==material.id){
+          item.count++;
+          find=true;
+        }
+      }
+      if(!find){
+        Add(new MaterialInstance{material=material,count=1});
+      }
+      BackPack.SaveChange();
+    }
     public void UpdateList(){
       for (int index = 0; index < materialList.Count; index++)
       {
