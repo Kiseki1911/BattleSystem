@@ -12,7 +12,7 @@ public class Fatigue:MonoBehaviour
 
     public Image SP_UI;
 
-    private void Start() {
+    private void Awake() {
         Instance = this;
     }
 

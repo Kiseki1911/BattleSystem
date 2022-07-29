@@ -76,7 +76,7 @@ public class WeaponManager : MonoBehaviour
             }
         }
         
-    }  
+    }
 
     public IEnumerator OnHit(Vector2 colliPoint){
         yield return new WaitForSeconds(0.2f);
@@ -85,6 +85,7 @@ public class WeaponManager : MonoBehaviour
     }
 
     public void changeWeapon(Weapon newWeapon){
-
+        target.velocity=Vector2.zero;
+        t=0;
     }
 }

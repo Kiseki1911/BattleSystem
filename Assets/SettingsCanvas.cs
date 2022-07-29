@@ -52,7 +52,8 @@ public class SettingsCanvas : MonoBehaviour
         Application.Quit();
     }
     public void RestartGame(){
-        SceneManager.LoadScene(0);
+        Scene reload = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(reload.name);
         //player.SetActive(true);
         //player.GetComponent<CharacterActions>().CharacterReset();
         //mapGrid.GetComponent<MapControl>().nextlevel();

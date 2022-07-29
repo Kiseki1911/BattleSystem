@@ -35,11 +35,6 @@ public class Material : ScriptableItem {
     }
 }
 
-public class item {
-    public string title = "";
-    public float price;
-}
-
 public class ScriptableItem : ScriptableObject{
     public string title = "";
     public float price;

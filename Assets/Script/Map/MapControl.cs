@@ -11,7 +11,7 @@ public class MapControl : MonoBehaviour
 
     void Start()
     {
-        nextlevel();
+        player.transform.position=new Vector2(4,4);
     }
 
     private void Update() {

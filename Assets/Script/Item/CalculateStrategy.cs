@@ -18,24 +18,19 @@ public interface CalculateStrategy{
 
 public class SwordCalculate : CalculateStrategy{
 	public float calculateDamage(Weapon weapon){
-		float dmg=weapon.mass*0.5f;
-		dmg*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
-		dmg*=weapon.hardness/5f;
-		return dmg;
-	}
-	public float calculateAgile(Weapon weapon){
-		float agi=40f/(1+weapon.mass*0.5f);
-		agi/=(.5f+(weapon.massCenter-weapon.handle).magnitude);
-		agi*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)));
-		return agi;
-	}
-}
-public class JianCalculate : CalculateStrategy{
-	public float calculateDamage(Weapon weapon){
-		float dmg=weapon.mass*0.2f;
-		dmg*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
-		dmg*=weapon.hardness/8f;
-		return dmg;
+		if(weapon.sharped){
+			float dmg=weapon.mass*0.4f;
+			dmg*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
+			dmg*=weapon.hardness/4f;
+			return dmg;
+		}
+		else
+		{
+			float dmg=weapon.mass*0.2f;
+			dmg*=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
+			dmg*=weapon.hardness/6f;
+			return dmg;
+		}
 	}
 	public float calculateAgile(Weapon weapon){
 		float agi=40f/(1+weapon.mass*0.5f);
@@ -46,32 +41,31 @@ public class JianCalculate : CalculateStrategy{
 }
 public class AxeCalculate : CalculateStrategy{
 	public float calculateDamage(Weapon weapon){
-		float dmg=weapon.mass*.3f;
+		if(weapon.sharped){
+			float dmg=weapon.mass*.3f;
 		float ratio=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
 		ratio+=0.25f;
 		ratio/=1.25f;
 		dmg*=ratio;
 		dmg*=weapon.hardness/7f;
 		return dmg;
+		}
+		else
+		{
+			float dmg=weapon.mass*.1f;
+			dmg=weapon.mass*0.5f;float ratio=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
+			ratio+=0.25f;
+			ratio/=1.25f;
+			dmg*=ratio;
+			dmg*=weapon.hardness/10f;
+			return dmg;
+		}
 	}
 	public float calculateAgile(Weapon weapon){
 		return 0;
 	}
 }
-public class HammerCalculate : CalculateStrategy{
-	public float calculateDamage(Weapon weapon){
-		float dmg=weapon.mass*.1f;
-		dmg=weapon.mass*0.5f;float ratio=(Vector2.Dot((weapon.farestPoint-weapon.handle),(weapon.massCenter-weapon.handle)))/((weapon.farestPoint-weapon.handle).magnitude*(weapon.massCenter-weapon.handle).magnitude/50f);
-		ratio+=0.25f;
-		ratio/=1.25f;
-		dmg*=ratio;
-		dmg*=weapon.hardness/10f;
-		return dmg;
-	}
-	public float calculateAgile(Weapon weapon){
-		return 0;
-	}
-}
+
 public class ReaperCalculate : CalculateStrategy{
 	public float calculateDamage(Weapon weapon){
 		return 0;

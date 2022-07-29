@@ -8,14 +8,12 @@ public enum WeaponType
 {
 	nulltype	=	0,
 	sword			=	1,
-	Jian			=	2,//锏
-	axe				=	3,
-	hammer		=	4,
-	reaper		=	5
+	axe				=	2,
+	reaper		=	3
 }
 //Weapon class
 [System.Serializable]
-public class Weapon :item {
+public class Weapon :ScriptableItem {
 	public float mass;
 	public float hardness;
 	private float _damageRate=-1;
@@ -76,9 +74,7 @@ public class Weapon :item {
 	public WeaponType Type{
 		set{type	=	value;
 		calculate	=	(value==WeaponType.sword)	?	new SwordCalculate():
-								(value==WeaponType.Jian)		?	new JianCalculate():
 								(value==WeaponType.axe)		?	new AxeCalculate():
-								(value==WeaponType.hammer)	?	new HammerCalculate():
 								(value==WeaponType.reaper)	?	new ReaperCalculate():
 								(CalculateStrategy)null;}
 		get{return type;}
@@ -119,6 +115,7 @@ public class Weapon :item {
 		sharpedMatrix = new int [matrixSize,matrixSize];
 		matrix=helper.matrix;
     durability = helper.durability;
+		effects=helper.effects;
 	}
 	//live update for mass and material matrix
 	public Tuple<float,Vector2> onChangeMaterial(Vector2 position,int material){
@@ -181,6 +178,7 @@ public class Weapon :item {
 		hardness /= materialCount;
 		setHandle(pos);
 		foraged = true;
+
 	}
 
 	public void setHandle(Vector2 pos){

@@ -323,8 +323,8 @@ MonoBehaviour:
   - {fileID: 6485199868900662252}
   - {fileID: 6485199868480184205}
   m_Bounds:
-    m_Center: {x: 0.0026346147, y: 0.24533112, z: 0}
-    m_Extent: {x: 0.25410867, y: 0.25363865, z: 0}
+    m_Center: {x: 0.002634406, y: 0.24533144, z: 0}
+    m_Extent: {x: 0.25410855, y: 0.2536388, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -613,9 +613,9 @@ MonoBehaviour:
   m_ComponentVersion: 1
   m_LightType: 3
   m_BlendStyleIndex: 0
-  m_FalloffIntensity: 0.5
+  m_FalloffIntensity: 0.3
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
@@ -627,7 +627,7 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensityEnabled: 1
   m_ShadowIntensity: 0.75
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
-  m_PointLightOuterRadius: 5
+  m_PointLightOuterRadius: 15
   m_ShapeLightParametricSides: 5
   m_ShapeLightParametricAngleOffset: 0
   m_ShapeLightParametricRadius: 1
@@ -851,6 +851,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FollowDialog
       objectReference: {fileID: 0}
+    - target: {fileID: 1269012747890820144, guid: 7cce842878eabf84d8d6671e2280cfa9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7cce842878eabf84d8d6671e2280cfa9, type: 3}
 --- !u!224 &2346051629775532011 stripped
@@ -964,6 +968,10 @@ PrefabInstance:
     - target: {fileID: 655212777962062607, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 655212777962062607, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 811613415332107904, guid: 59839a570d5cd8643aebcc3e7de80865, type: 3}
       propertyPath: m_BodyType

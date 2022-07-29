@@ -18,4 +18,9 @@ MonoBehaviour:
   mass: 20
   hardness: 10
   sharped: 0
-  color: {r: 0.7924528, g: 0.656492, b: 0.24222142, a: 1}
+  effect:
+    name: 
+    Discription: 
+    type: 0
+    strength: 0
+  color: {r: 1, g: 0.7779867, b: 0, a: 1}
