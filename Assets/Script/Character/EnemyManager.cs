@@ -52,7 +52,7 @@ public class EnemyManager : MonoBehaviour
         oldPos=transform.position;
     }
     public void Movement(Vector3 directionUnit){
-        rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1f);
+        rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1.5f);
         for(int i=0; i <rayResults.Length;i++){
             if(rayResults[i].collider.tag=="Wall"){
                 //Debug.Log("wall ahead");

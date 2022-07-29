@@ -28,14 +28,14 @@ public class DialogueSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0))&&index==textList.Count){
+        if((Input.GetKeyDown(KeyCode.Space))&&index==textList.Count){
             gameObject.SetActive(false);
             index=0;
             Time.timeScale=1;
             PlayerManager.isControlling=true;
             return;
         }
-        if((Input.GetKeyDown(KeyCode.Space)||Input.GetMouseButtonDown(0))){
+        if((Input.GetKeyDown(KeyCode.Space))){
             textLabel.text = textList[index];
             index++;
         }
