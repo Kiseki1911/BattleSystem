@@ -16,6 +16,8 @@ public class EnemyManager : MonoBehaviour
     public int attackDamange=20;
     
     public bool isRoundAttack;
+    public Material [] drop;
+    public GameObject materialCube;
     public ParticleSystem deathEffect;
 
     public GameObject dmgDisplay;
@@ -52,7 +54,7 @@ public class EnemyManager : MonoBehaviour
         oldPos=transform.position;
     }
     public void Movement(Vector3 directionUnit){
-        rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1f);
+        rayResults = Physics2D.RaycastAll(transform.position,directionUnit,1.5f);
         for(int i=0; i <rayResults.Length;i++){
             if(rayResults[i].collider.tag=="Wall"){
                 //Debug.Log("wall ahead");
@@ -158,11 +160,17 @@ public class EnemyManager : MonoBehaviour
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);
         }
         gameObject.SetActive(false);
-        transform.parent.GetComponent<roomGen>().onEnemyDeath();
+        
+        //transform.parent.GetComponent<roomGen>().onEnemyDeath();
     }
 
     void DropItem(){
-
+        foreach (var item in drop)
+            {
+                Debug.Log(item.name);
+                var cube=Instantiate(materialCube,transform.position+(Vector3)Random.insideUnitCircle,Quaternion.identity);
+                cube.GetComponent<materialObj>().setMaterial(item);
+            }
     }
 
     private void OnTriggerEnter2D(Collider2D other) {

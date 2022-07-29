@@ -38,7 +38,8 @@ public class CharacterActions : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = speed*modif*GetComponent<PlayerManager>().dirUnit;
         if(GetComponent<PlayerManager>().isRunning){
             speed = 6f/modif;
-            fatigue.IncreaseFat(Mathf.FloorToInt(speed/2));
+            if(GetComponent<Rigidbody2D>().velocity!=Vector2.zero)
+                fatigue.IncreaseFat(Mathf.FloorToInt(speed/2));
         }
         else{
             speed = 2f;
