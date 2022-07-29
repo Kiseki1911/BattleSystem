@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
+using UnityEngine.UI;
 
-public class DialogueSystem : MonoBehaviour
+public class FollowDialogControl : MonoBehaviour
 {
+    public GameObject followCanvas;
     public TMP_Text textLabel;
     public Image characterImage;
     public TextAsset textFile;
@@ -15,24 +16,20 @@ public class DialogueSystem : MonoBehaviour
     List<string> textList = new List<string>();
     private void Awake()
     {
-        GetTextFromFile(textFile);
+        //GetTextFromFile(textFile);
         
     }
     private void OnEnable() {
         textLabel.text = textList[index];
         index++;
-        Time.timeScale=0;
-        PlayerManager.isControlling=false;
     }
 
     // Update is called once per frame
     void Update()
     {
         if((Input.GetKeyDown(KeyCode.Space))&&index==textList.Count){
-            gameObject.SetActive(false);
+            followCanvas.SetActive(false);
             index=0;
-            Time.timeScale=1;
-            PlayerManager.isControlling=true;
             return;
         }
         if((Input.GetKeyDown(KeyCode.Space))){
@@ -47,5 +44,16 @@ public class DialogueSystem : MonoBehaviour
         foreach(var line in lineData){
             textList.Add(line);
         }
+    }
+    public void GetText(string[] lines){
+        textList.Clear();
+        index = 0;
+        for(int i =0; i <lines.Length;i++){
+            textList.Add(lines[i]);
+        }
+        //var lineData = file.text.Split('\n');
+    }
+    public void SkipButton(){
+        followCanvas.SetActive(false);
     }
 }
