@@ -27,7 +27,7 @@ public class WeaponInstance : MonoBehaviour
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
         massCenter.transform.localPosition=(new Vector2(weapon.massCenter.x,36-weapon.massCenter.y)-weapon.handle)/36;
         oldPos=massCenter.transform.position/32;
-        Debug.Log(weapon.ToString());
+        // Debug.Log(weapon.ToString());
     }
 
     // Update is called once per frame
@@ -59,5 +59,10 @@ public class WeaponInstance : MonoBehaviour
         oldPos=massCenter.transform.position/36;
         Debug.Log(weapon.ToString());
         WeaponManager.Instance.changeWeapon(weapon);
+    }
+
+    private void Update() {
+        Sprite.Destroy(GetComponent<SpriteRenderer>().sprite);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.dynamicTexture,new Rect(0,0,36,36),(weapon.handle+new Vector2(0.5f,-0.5f))/36f,36);
     }
 }
