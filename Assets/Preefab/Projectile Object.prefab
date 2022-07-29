@@ -109,7 +109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_FlipX: 0
@@ -273,6 +273,30 @@ PrefabInstance:
     - target: {fileID: 1834646713672015834, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
       propertyPath: m_Name
       value: Trail
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941876275834920548, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941876275834920548, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
+      propertyPath: m_Parameters.colorGradient.ctime0
+      value: 5975
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941876275834920548, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941876275834920548, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941876275834920548, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
+      propertyPath: m_Parameters.colorGradient.key0.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941876275834920548, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.30121157
       objectReference: {fileID: 0}
     - target: {fileID: 6074045651731743878, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
       propertyPath: m_RootOrder

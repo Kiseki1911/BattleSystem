@@ -42,7 +42,7 @@ public class SettingsCanvas : MonoBehaviour
     }
     public void ReviewDialogue(){
         escPanel.SetActive(false);
-        dialoguePanel.SetActive(true);
+        dialoguePanel.GetComponent<FollowDialogControl>().Review();
 
     }
     public void ExitGame(){

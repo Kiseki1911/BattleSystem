@@ -166,6 +166,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trail
       objectReference: {fileID: 0}
+    - target: {fileID: 1834646713672015834, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1941876275834920548, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1941876275834920548, guid: 54e7acd7a0b561140a0f93b7b6351461, type: 3}
       propertyPath: m_Parameters.colorGradient.ctime0
       value: 14456

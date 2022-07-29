@@ -866,45 +866,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 392076373933668444, guid: 7cce842878eabf84d8d6671e2280cfa9, type: 3}
   m_PrefabInstance: {fileID: 2737685982816802743}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2773855270731425164 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 252342632671752763, guid: 7cce842878eabf84d8d6671e2280cfa9, type: 3}
-  m_PrefabInstance: {fileID: 2737685982816802743}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3774657208359654279 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1269012747890820144, guid: 7cce842878eabf84d8d6671e2280cfa9, type: 3}
-  m_PrefabInstance: {fileID: 2737685982816802743}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8520054681514102328
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774657208359654279}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 662abd181bf5ea2478160fb5f1ce6159, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  followCanvas: {fileID: 2773855270731425164}
-  textLabel: {fileID: 4485242154229128390}
-  characterImage: {fileID: 0}
-  textFile: {fileID: 0}
-  textSpeed: 0
-  index: 0
---- !u!114 &4485242154229128390 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1999863338023242609, guid: 7cce842878eabf84d8d6671e2280cfa9, type: 3}
-  m_PrefabInstance: {fileID: 2737685982816802743}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &5987472376105816350
 PrefabInstance:
   m_ObjectHideFlags: 0

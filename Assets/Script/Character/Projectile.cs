@@ -7,13 +7,14 @@ public class Projectile : WeaponInstance
     public GameObject player;
     private bool onHit = false;
     private bool onReturn = false;
+    private Vector3 dir;
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Rigidbody2D>().mass = WeaponInstance.instance.weapon.mass/300;
         player = GameObject.FindGameObjectWithTag("Player");
         //gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(1,0);
-        StartCoroutine(SelfReturn(10));
+        StartCoroutine(SelfReturn(6));
         currentWeapon= WeaponInstance.instance.currentWeapon; 
         weapon = BackPack.Instance.weaponList[currentWeapon];
         GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y+.5f,36-weapon.handle.x+.5f)/36f,32);
@@ -23,6 +24,9 @@ public class Projectile : WeaponInstance
     // Update is called once per frame
     void Update()
     {
+        if(!onHit&&!onReturn && (gameObject.GetComponent<Rigidbody2D>().velocity.SqrMagnitude()>0.1)){
+            gameObject.GetComponent<Rigidbody2D>().AddForce(-5*dir);
+        }
         if(onHit){
             gameObject.GetComponent<Rigidbody2D>().velocity=Vector2.zero;
             gameObject.GetComponent<Rigidbody2D>().angularVelocity = 0;
@@ -32,6 +36,7 @@ public class Projectile : WeaponInstance
                 onReturn = true;
             }
         }
+
     }
     protected void FixedUpdate() {
         if(onReturn){
@@ -47,7 +52,8 @@ public class Projectile : WeaponInstance
     }
 
     public void Enter(Vector3 direction){
-        gameObject.GetComponent<Rigidbody2D>().AddForce(1000*direction);
+        gameObject.GetComponent<Rigidbody2D>().AddForce(2000*direction);
+        dir= direction;
     }
 
     protected void OnTriggerEnter2D(Collider2D other) {
