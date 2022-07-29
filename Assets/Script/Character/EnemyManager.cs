@@ -159,6 +159,10 @@ public class EnemyManager : MonoBehaviour
         if(transform.GetComponentInChildren<Projectile>()!=null){
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);
         }
+        EnemyDialog dialog;
+        if(TryGetComponent<EnemyDialog>(out dialog)){
+            dialog.sendDialog();
+        }
         gameObject.SetActive(false);
         
         //transform.parent.GetComponent<roomGen>().onEnemyDeath();

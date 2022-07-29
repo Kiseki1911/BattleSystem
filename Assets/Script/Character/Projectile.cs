@@ -17,8 +17,9 @@ public class Projectile : WeaponInstance
         StartCoroutine(SelfReturn(6));
         currentWeapon= WeaponInstance.instance.currentWeapon; 
         weapon = BackPack.Instance.weaponList[currentWeapon];
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y+.5f,36-weapon.handle.x+.5f)/36f,32);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),(weapon.handle+new Vector2(0.5f,-0.5f))/36f,36);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
+        massCenter.transform.localPosition=(new Vector2(weapon.massCenter.x,36-weapon.massCenter.y)-weapon.handle)/36;
     }
 
     // Update is called once per frame
