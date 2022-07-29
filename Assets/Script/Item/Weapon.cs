@@ -200,6 +200,13 @@ public class Weapon :ScriptableItem {
 		}
 	}
   private Texture2D _texture;
+  public Texture2D dynamicTexture{
+    get{
+      Highlight.Instance.MainTexture = texture;
+      Highlight.Instance.HighlightMatrix = sharpedMatrix;
+      return Highlight.Instance.result;
+    }
+  }
 	public Texture2D texture{
 		get{
       // TODO: 当前缓存模式没有进行版本管理，当对武器进行修改时无法更新贴图
