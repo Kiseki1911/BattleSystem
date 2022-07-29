@@ -182,8 +182,8 @@ public class Weapon :ScriptableItem {
 	}
 
 	public void setHandle(Vector2 pos){
-		handle.x=pos.y;
-		handle.y=pos.x;
+		handle.x=pos.x;
+		handle.y=36-pos.y;
 	}
 	public Material this[int i,int j]{
 		get{

@@ -23,10 +23,10 @@ public class WeaponInstance : MonoBehaviour
         transform.rotation=Quaternion.identity;
         weapon = BackPack.Instance.weaponList[currentWeapon];
         //transform.localPosition=weapon.handle/36;
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y+.5f,36-weapon.handle.x+.5f)/36f,32);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),(weapon.handle+new Vector2(0.5f,-0.5f))/36f,36);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
-        massCenter.transform.localPosition=(weapon.massCenter-new Vector2(weapon.handle.y,36-weapon.handle.x))/36;
-        oldPos=massCenter.transform.position/36;
+        massCenter.transform.localPosition=(new Vector2(weapon.massCenter.x,36-weapon.massCenter.y)-weapon.handle)/36;
+        oldPos=massCenter.transform.position/32;
         Debug.Log(weapon.ToString());
     }
 
@@ -53,9 +53,9 @@ public class WeaponInstance : MonoBehaviour
         currentWeapon=i;
         weapon = BackPack.Instance.weaponList[currentWeapon];
         Destroy(GetComponent<PolygonCollider2D>());
-        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),new Vector2(weapon.handle.y+.5f,36-weapon.handle.x+.5f)/36f,32);
+        GetComponent<SpriteRenderer>().sprite=Sprite.Create(weapon.texture,new Rect(0,0,36,36),(weapon.handle+new Vector2(0.5f,-0.5f))/36f,36);
         gameObject.AddComponent<PolygonCollider2D>().isTrigger=true;
-        massCenter.transform.localPosition=(weapon.massCenter-new Vector2(weapon.handle.y,36-weapon.handle.x))/36;
+        massCenter.transform.localPosition=(new Vector2(weapon.massCenter.x,36-weapon.massCenter.y)-weapon.handle)/36;
         oldPos=massCenter.transform.position/36;
         Debug.Log(weapon.ToString());
         WeaponManager.Instance.changeWeapon(weapon);

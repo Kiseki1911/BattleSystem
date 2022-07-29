@@ -16,6 +16,8 @@ public class EnemyManager : MonoBehaviour
     public int attackDamange=20;
     
     public bool isRoundAttack;
+    public Material [] drop;
+    public GameObject materialCube;
     public ParticleSystem deathEffect;
 
     public Collider2D[] unitSees = new Collider2D[5];
@@ -151,6 +153,12 @@ public class EnemyManager : MonoBehaviour
         }
         transform.parent.GetComponent<roomGen>().onEnemyDeath();
         gameObject.SetActive(false);
+        foreach (var item in drop)
+        {
+            Debug.Log(item.name);
+            var cube=Instantiate(materialCube,transform.position+(Vector3)Random.insideUnitCircle,Quaternion.identity);
+            cube.GetComponent<materialObj>().setMaterial(item);
+        }
     }
 
     void DropItem(){
