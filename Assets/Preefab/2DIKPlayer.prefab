@@ -108,7 +108,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: 21300000, guid: 8c7d548f5c378464abdc0856b11a0899, type: 3}
+  m_Sprite: {fileID: -2007080201, guid: 0d88dfe48bb941d44a1c9e8b6707a349, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -295,7 +295,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: ac56def81a39b564395aa70995289e69, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
@@ -303,7 +303,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &6485199869175393819
@@ -323,8 +323,8 @@ MonoBehaviour:
   - {fileID: 6485199868900662252}
   - {fileID: 6485199868480184205}
   m_Bounds:
-    m_Center: {x: 0.002634406, y: 0.24533144, z: 0}
-    m_Extent: {x: 0.25410855, y: 0.2536388, z: 0}
+    m_Center: {x: 0.0026343167, y: 0.24533144, z: 0}
+    m_Extent: {x: 0.25410843, y: 0.2536388, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
@@ -622,7 +622,6 @@ MonoBehaviour:
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
-  m_AlphaBlendOnOverlap: 0
   m_OverlapOperation: 0
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
