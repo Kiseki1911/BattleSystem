@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class DamageDisplay : MonoBehaviour
 {
@@ -9,6 +10,10 @@ public class DamageDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
+        GetComponent<Canvas>().worldCamera = Camera.main;
+        GetComponent<Canvas>().sortingLayerName = "Default";
+        GetComponent<Canvas>().sortingOrder =10;
         transform.position+= new Vector3(Random.Range(-1f,1f),Random.value,0);
         StartCoroutine(SelfDestroy());
     }

@@ -9,12 +9,14 @@ public class materialObj : MonoBehaviour
     SpriteRenderer myRenderer;
     Collider2D myCollider;
     public GameObject display;
+    public int num = 1;
     // Start is called before the first frame update
     void Awake()
     {
         myRenderer=GetComponent<SpriteRenderer>();
         myCollider=GetComponent<Collider2D>();
         myRenderer.color=material.color;
+        transform.GetChild(0).GetComponent<Light2D>().color=this.material.color;
     }
 
     public void setMaterial(Material material){
@@ -28,10 +30,11 @@ public class materialObj : MonoBehaviour
         Debug.Log(other.gameObject.tag);
         if(other.tag=="Player"){
             myCollider.enabled=false;
-            BackPack.Instance.materials.Add(material);
-            display.GetComponent<MaterialDisplay>().pick(material.title,1);
+            BackPack.Instance.materials.Add(material, num);
+            display.GetComponent<MaterialDisplay>().pick(material.title,num);
             Instantiate(display,transform.position,Quaternion.identity);
             Destroy(gameObject,0.05f);
         }
     }
+
 }

@@ -160,8 +160,10 @@ public class EnemyManager : MonoBehaviour
             transform.GetComponentInChildren<Projectile>().gameObject.transform.SetParent(null);
         }
         EnemyDialog dialog;
+        //GetComponent<EnemyDialog>().sendDialog();
         if(TryGetComponent<EnemyDialog>(out dialog)){
             dialog.sendDialog();
+            Debug.Log("dialog");
         }
         gameObject.SetActive(false);
         

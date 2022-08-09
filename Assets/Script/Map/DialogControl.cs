@@ -21,7 +21,7 @@ public class DialogControl : MonoBehaviour
         if(other.tag=="Player"){
             Debug.Log(1);
             dialog.GetText(strList);
-            dialog.gameObject.SetActive(true);
+            //dialog.gameObject.SetActive(true);
             Destroy(gameObject);
         }
     }
